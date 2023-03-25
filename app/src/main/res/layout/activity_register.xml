@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/app_bg"
+    tools:context=".activity.RegisterActivity">
+
+    <ImageButton
+        android:id="@+id/btn_return"
+        android:layout_width="@dimen/dimen_9dp"
+        android:layout_height="@dimen/dimen_15dp"
+        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginTop="@dimen/dimen_50dp"
+        android:background="@null"
+        android:src="@mipmap/return_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dimen_155dp"
+        android:background="@drawable/shape_login_bg"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dimen_24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40dp"
+            android:text="@string/register"
+            android:textColor="@color/color_112950"
+            android:textSize="@dimen/size_32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:text="@string/register_account_info_hint"
+            android:textColor="@color/color_b2bac6"
+            android:textSize="@dimen/size_15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_180dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_25dp"
+                    android:layout_height="@dimen/dimen_25dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:src="@mipmap/login_account" />
+
+                <EditText
+                    android:id="@+id/et_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="@string/account_hint"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/color_b2bac6"
+                    android:textSize="@dimen/size_18sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_2dp"
+                android:layout_marginVertical="@dimen/dimen_10dp"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_9dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_25dp"
+                    android:layout_height="@dimen/dimen_25dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:src="@mipmap/login_pwd" />
+
+                <EditText
+                    android:id="@+id/et_pwd"
+                    android:layout_width="@dimen/dimen_0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/pwd_hint"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/color_b2bac6"
+                    android:textSize="@dimen/size_18sp" />
+
+                <ImageView
+                    android:id="@+id/img_pwd_open_close"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_17dp"
+                    android:layout_marginRight="@dimen/dimen_5dp"
+                    android:src="@drawable/sel_pwd_open_close" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_2dp"
+                android:layout_marginVertical="@dimen/dimen_10dp"
+                android:background="@color/color_e5e5e5" />
+        </LinearLayout>
+
+        <Button
+            android:id="@id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_52dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/shape_big_register_btn"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_account_number"
+                android:textColor="@color/color_112950"
+                android:textSize="@dimen/size_16sp" />
+
+            <TextView
+                android:id="@+id/btn_log_in"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:autoLink="none"
+                android:text="@string/register_log_in"
+                android:textColor="@color/color_0065ff"
+                android:textSize="@dimen/size_16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/dimen_229dp"
+        android:layout_height="@dimen/dimen_180dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dimen_50dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/register_img" />
+</RelativeLayout>

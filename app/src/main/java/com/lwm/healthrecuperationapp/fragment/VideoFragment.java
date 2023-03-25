@@ -1,0 +1,318 @@
+package com.lwm.healthrecuperationapp.fragment;
+
+import android.content.pm.ActivityInfo;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
+
+import com.google.gson.Gson;
+import com.lwm.healthrecuperationapp.R;
+import com.lwm.healthrecuperationapp.adapter.VideoAdapter;
+import com.lwm.healthrecuperationapp.api.Api;
+import com.lwm.healthrecuperationapp.api.ApiConfig;
+import com.lwm.healthrecuperationapp.api.RequestCallback;
+import com.lwm.healthrecuperationapp.entity.VideoEntity;
+import com.lwm.healthrecuperationapp.entity.VideoListResponse;
+import com.lwm.healthrecuperationapp.listener.OnItemChildClickListener;
+import com.lwm.healthrecuperationapp.util.Tag;
+import com.lwm.healthrecuperationapp.util.Utils;
+import com.scwang.smart.refresh.footer.ClassicsFooter;
+import com.scwang.smart.refresh.header.ClassicsHeader;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import xyz.doikki.videocontroller.StandardVideoController;
+import xyz.doikki.videocontroller.component.CompleteView;
+import xyz.doikki.videocontroller.component.ErrorView;
+import xyz.doikki.videocontroller.component.GestureView;
+import xyz.doikki.videocontroller.component.TitleView;
+import xyz.doikki.videocontroller.component.VodControlView;
+import xyz.doikki.videoplayer.player.VideoView;
+
+public class VideoFragment extends BaseFragment implements OnItemChildClickListener {
+
+    private int categoryId;
+    private RecyclerView mRecyclerView;
+    private RefreshLayout mRefreshLayout;
+    private int pageNum = 1; // 分页：第几页
+    private VideoAdapter mVideoAdapter;
+    private List<VideoEntity> datas = new ArrayList<>();
+    private LinearLayoutManager mLinearLayoutManager;
+
+    // 视频播放
+    protected VideoView mVideoView;
+    protected StandardVideoController mController;
+    protected ErrorView mErrorView;
+    protected CompleteView mCompleteView;
+    protected TitleView mTitleView;
+    /**
+     * 当前播放的位置
+     */
+    protected int mCurPos = -1;
+    /**
+     * 上次播放的位置，用于页面切回来之后恢复播放
+     */
+    protected int mLastPos = mCurPos;
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    // 将数据设置进 VideoAdapter
+                    mVideoAdapter.setDatas(datas);
+                    mVideoAdapter.notifyDataSetChanged(); // 通知 RecyclerView 刷新页面(刷新数据)
+                    break;
+            }
+        }
+    };
+
+
+    public VideoFragment() {
+
+    }
+
+    public static VideoFragment newInstance(int categoryId) {
+        VideoFragment fragment = new VideoFragment();
+        fragment.categoryId = categoryId;
+        return fragment;
+    }
+
+    @Override
+    protected int initLayout() {
+        return R.layout.fragment_video;
+    }
+
+    @Override
+    protected void initView() {
+        initVideoView();
+        mRecyclerView = mRootView.findViewById(R.id.recyclerview);
+        mRefreshLayout = mRootView.findViewById(R.id.refreshLayout);
+    }
+
+    // 初始化视频播放器
+    protected void initVideoView() {
+        mVideoView = new VideoView(getActivity());
+        mVideoView.setOnStateChangeListener(new xyz.doikki.videoplayer.player.VideoView.SimpleOnStateChangeListener() {
+            @Override
+            public void onPlayStateChanged(int playState) {
+                //监听VideoViewManager释放，重置状态
+                if (playState == xyz.doikki.videoplayer.player.VideoView.STATE_IDLE) {
+                    Utils.removeViewFormParent(mVideoView);
+                    mLastPos = mCurPos;
+                    mCurPos = -1;
+                }
+            }
+        });
+        mController = new StandardVideoController(getActivity());
+        mErrorView = new ErrorView(getActivity());
+        mController.addControlComponent(mErrorView);
+        mCompleteView = new CompleteView(getActivity());
+        mController.addControlComponent(mCompleteView);
+        mTitleView = new TitleView(getActivity());
+        mController.addControlComponent(mTitleView);
+        mController.addControlComponent(new VodControlView(getActivity()));
+        mController.addControlComponent(new GestureView(getActivity()));
+        mController.setEnableOrientation(true);
+        mVideoView.setVideoController(mController);
+    }
+
+    @Override
+    protected void initData() {
+        mLinearLayoutManager = new LinearLayoutManager(getActivity());
+        mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
+        mVideoAdapter = new VideoAdapter(getActivity());
+        mVideoAdapter.setOnItemChildClickListener(this);
+        mRecyclerView.setAdapter(mVideoAdapter);
+        mRecyclerView.addOnChildAttachStateChangeListener(new RecyclerView.OnChildAttachStateChangeListener() {
+            @Override
+            public void onChildViewAttachedToWindow(@NonNull View view) {
+
+            }
+
+            // 当一个 ItemView(一个子项)从手机界面脱离时(向上滑动时脱离)，此时该ItemView看不到了，就会回调此方法，此时释放此视频播放
+            @Override
+            public void onChildViewDetachedFromWindow(@NonNull View view) {
+                FrameLayout playerContainer = view.findViewById(R.id.player_container);
+                View v = playerContainer.getChildAt(0);
+                if (v != null && v == mVideoView && !mVideoView.isFullScreen()) {
+                    releaseVideoView();
+                }
+            }
+        });
+        mRefreshLayout.setRefreshHeader(new ClassicsHeader(getActivity()));
+        mRefreshLayout.setRefreshFooter(new ClassicsFooter(getActivity()));
+        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+//                refreshlayout.finishRefresh(2000, false); // 传入false表示刷新失败
+                pageNum = 1; // 刷新时将pageNum(第几页)重置为 1
+                getVideoList(true);
+            }
+        });
+        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(RefreshLayout refreshlayout) {
+//                refreshlayout.finishLoadMore(2000, false); // 传入false表示加载失败
+                pageNum++; // 加载时将pageNum(第几页)++
+                getVideoList(false);
+            }
+        });
+        getVideoList(true);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        pause();
+    }
+
+    /**
+     * 由于onPause必须调用super。故增加此方法，
+     * 子类将会重写此方法，改变onPause的逻辑
+     */
+    protected void pause() {
+        releaseVideoView();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        resume();
+    }
+
+    /**
+     * 由于onResume必须调用super。故增加此方法，
+     * 子类将会重写此方法，改变onResume的逻辑
+     */
+    protected void resume() {
+        if (mLastPos == -1)
+            return;
+        //恢复上次播放的位置
+        startPlay(mLastPos);
+    }
+
+    /**
+     * PrepareView被点击
+     */
+    @Override
+    public void onItemChildClick(int position) {
+        startPlay(position);
+    }
+
+    /**
+     * 开始播放
+     *
+     * @param position 列表位置
+     */
+    protected void startPlay(int position) {
+        if (mCurPos == position) return;
+        if (mCurPos != -1) {
+            releaseVideoView();
+        }
+        VideoEntity videoEntity = datas.get(position);
+        //边播边存
+//        String proxyUrl = ProxyVideoCacheManager.getProxy(getActivity()).getProxyUrl(videoBean.getUrl());
+//        mVideoView.setUrl(proxyUrl);
+
+        mVideoView.setUrl(videoEntity.getPlayurl());
+        mTitleView.setTitle(videoEntity.getVtitle());
+        View itemView = mLinearLayoutManager.findViewByPosition(position);
+        if (itemView == null) return;
+        VideoAdapter.ViewHolder viewHolder = (VideoAdapter.ViewHolder) itemView.getTag();
+        //把列表中预置的PrepareView添加到控制器中，注意isDissociate此处只能为true, 请点进去看isDissociate的解释
+        mController.addControlComponent(viewHolder.mPrepareView, true);
+        Utils.removeViewFormParent(mVideoView);
+        viewHolder.mPlayerContainer.addView(mVideoView, 0);
+        //播放之前将VideoView添加到VideoViewManager以便在别的页面也能操作它
+        getVideoViewManager().add(mVideoView, Tag.LIST);
+        mVideoView.start();
+        mCurPos = position;
+
+    }
+
+    // 释放视频播放器
+    private void releaseVideoView() {
+        mVideoView.release();
+        if (mVideoView.isFullScreen()) {
+            mVideoView.stopFullScreen();
+        }
+        if (getActivity().getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
+        mCurPos = -1;
+    }
+
+    // isRefresh：区分刷新/加载
+    //    true：刷新
+    //    false：加载
+    private void getVideoList(boolean isRefresh) {
+        HashMap<String, Object> params = new HashMap<>();
+        // "page" 和 "limit"用于实现分页
+        params.put("page", pageNum); // 分页：第几页
+        params.put("limit", ApiConfig.PAGE_SIZE);  // 分页：每页5条数据
+        params.put("categoryId", categoryId);
+        Api.config(ApiConfig.VIDEO_LIST_BY_CATEGORY, params).getRequest(getActivity(), new RequestCallback() {
+            @Override
+            public void onSuccess(String res) {
+                Log.d("onSuccess：", res);
+                if (isRefresh) {
+                    mRefreshLayout.finishRefresh(true); // 将刷新动画关闭
+                } else {
+                    mRefreshLayout.finishLoadMore(true); // 将加载动画关闭
+                }
+                VideoListResponse response = new Gson().fromJson(res, VideoListResponse.class);
+                if (response != null && response.getCode() == 0) {
+                    List<VideoEntity> list = response.getPage().getList();
+                    // 判断接口返回的数据是否为空
+                    if (list != null && list.size() > 0) {
+                        if (isRefresh) {
+                            // 刷新时
+                            datas = list;
+                        } else {
+                            // 加载时，添加 list
+                            datas.addAll(list);
+                        }
+                        mHandler.sendEmptyMessage(0);
+                    } else {
+                        if (isRefresh) {
+                            showToastSync(getString(R.string.refresh_toast));
+                        } else {
+                            showToastSync(getString(R.string.loadmore_toast));
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+                // 接口请求失败也要关闭动画
+                if (isRefresh) {
+                    mRefreshLayout.finishRefresh(true); // 将刷新动画关闭
+                } else {
+                    mRefreshLayout.finishLoadMore(true); // 将加载动画关闭
+                }
+            }
+        });
+    }
+}

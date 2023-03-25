@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">康养</string>
+    <string name="guide_skip">跳过</string>
+    <string name="guide_experience_now">立即体验</string>
+    <string name="main_welcome">欢迎来到康养APP</string>
+    <string name="login">登录</string>
+    <string name="login_point_out">输入您的账号以登录</string>
+    <string name="login_no_account">还没有账号？</string>
+    <string name="login_to_register"><u>去注册</u></string>
+    <string name="register">注册</string>
+    <string name="register_account_info_hint">输入您需要注册的账号信息</string>
+    <string name="register_account_number">有账号？</string>
+    <string name="register_log_in"><u>去登录</u></string>
+
+
+    <string name="account_hint">请输入您的用户名</string>
+    <string name="pwd_hint">请输入密码</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_fail">登录失败</string>
+    <string name="search_hint">搜索你喜欢的视频</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="refresh_toast">暂时无数据</string>
+    <string name="loadmore_toast">没有更多数据</string>
+    <string name="item_video_title">韭菜盒子新做法，不发面不烫面</string>
+    <string name="item_video_author">LiniL</string>
+    <string name="news_title">资讯</string>
+    <string name="news_item_title">CS+吃鸡+守望先锋，真正的大杂烩！</string>
+    <string name="news_item_title_1">《天外世界：果根险境》9月9日上架游戏将支持Xbox Series X专属强化</string>
+    <string name="news_item_author">游戏早知道 .</string>
+    <string name="news_item_comment">评论 .</string>
+    <string name="news_item_time">1小时前</string>
+    <string name="my_title">我的</string>
+    <string name="my_name">LiniL</string>
+    <string name="my_welcome_text">欢迎来到此平台</string>
+    <string name="my_read_text">阅读</string>
+    <string name="my_like_text">点赞</string>
+    <string name="my_comment_text">评论</string>
+    <string name="my_share_text">分享</string>
+    <string name="my_collection_text">我的收藏</string>
+    <string name="my_collection_empty">暂无收藏...</string>
+    <string name="my_change_skin_text">换肤</string>
+    <string name="my_logout_text">退出登录</string>
+    <string name="hot_news_item_title">部分牙膏功效宣称误导消费者 监管新规12月1日起实施</string>
+    <string name="hot_news_item_author">作者：</string>
+    <string name="hot_news_item_author_content">人民网，供稿：人民资讯</string>
+    <string name="hot_news_item_category">类别：</string>
+    <string name="hot_news_item_category_content">健康</string>
+    <string name="hot_news_item_time">时间：</string>
+    <string name="hot_news_item_time_content">2023-03-23 16:29:00</string>
+
+</resources>

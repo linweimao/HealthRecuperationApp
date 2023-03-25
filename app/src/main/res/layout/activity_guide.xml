@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/app_bg"
+    tools:context="com.lwm.healthrecuperationapp.activity.GuideActivity">
+
+    <TextView
+        android:id="@+id/guide_tv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:layout_marginRight="@dimen/dimen_30dp"
+        android:text="@string/guide_skip"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/size_16sp"
+        android:textStyle="bold" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/guide_vp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_50dp"
+        android:paddingBottom="@dimen/dimen_100dp" />
+
+    <LinearLayout
+        android:id="@+id/guide_ll_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guide_vp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <TextView
+        android:id="@+id/guide_tv_experience_now"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_above="@+id/guide_ll_point"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="@dimen/dimen_30dp"
+        android:layout_marginBottom="@dimen/dimen_50dp"
+        android:background="@drawable/shape_guide_btn"
+        android:gravity="center"
+        android:text="@string/guide_experience_now"
+        android:textColor="@color/color_4281ff"
+        android:textSize="@dimen/size_16sp"
+        android:textStyle="bold"
+        android:tooltipText="@string/hot_news_item_time_content"
+        android:visibility="gone" />
+</RelativeLayout>
