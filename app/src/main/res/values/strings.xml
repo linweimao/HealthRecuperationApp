@@ -48,6 +48,12 @@
     <string name="my_collection_text">我的收藏</string>
     <string name="my_collection_empty">暂无收藏...</string>
     <string name="my_change_skin_text">换肤</string>
+    <string name="my_emergency_contact">紧急联系人</string>
+    <string name="my_contact_us">联系我们</string>
+    <string name="my_setting">设置</string>
+    <string name="my_add_emergency_contact">添加紧急联系人</string>
+    <string name="my_safeguarding_health">保障自己和家人的身体健康</string>
+    <string name="my_add_now">立即添加</string>
     <string name="my_logout_text">退出登录</string>
     <string name="hot_news_item_title">部分牙膏功效宣称误导消费者 监管新规12月1日起实施</string>
     <string name="hot_news_item_author">作者：</string>

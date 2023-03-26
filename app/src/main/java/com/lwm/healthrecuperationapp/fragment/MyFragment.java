@@ -40,7 +40,8 @@ public class MyFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.img_header, R.id.rl_collect, R.id.rl_skin, R.id.rl_logout})
+    @OnClick({R.id.img_header, R.id.rl_collect, R.id.rl_skin, R.id.rl_emergency_contact,
+            R.id.rl_contact_us, R.id.rl_logout})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_header: // 头像
@@ -62,6 +63,12 @@ public class MyFragment extends BaseFragment {
                     SkinCompatManager.getInstance().loadSkin("night", SkinCompatManager.SKIN_LOADER_STRATEGY_BUILD_IN); // 后缀加载
                     saveStringToSp("skin", "night");
                 }
+                break;
+            case R.id.rl_emergency_contact: // 紧急联系人
+
+                break;
+
+            case R.id.rl_contact_us: // 联系我们
 
                 break;
             case R.id.rl_logout: // 退出登录
