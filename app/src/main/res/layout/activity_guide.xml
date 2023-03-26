@@ -6,33 +6,60 @@
     android:background="@mipmap/app_bg"
     tools:context="com.lwm.healthrecuperationapp.activity.GuideActivity">
 
+    <!-- 注意 ViewPager一定要在前面，否则跳过点击事件无法实现 -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/guide_vp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:paddingBottom="@dimen/dimen_15dp" />
+
     <TextView
         android:id="@+id/guide_tv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="@dimen/dimen_30dp"
+        android:layout_marginTop="@dimen/dimen_35dp"
         android:layout_marginRight="@dimen/dimen_30dp"
         android:text="@string/guide_skip"
         android:textColor="@color/color_ffffff"
         android:textSize="@dimen/size_16sp"
         android:textStyle="bold" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/guide_vp"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dimen_50dp"
-        android:paddingBottom="@dimen/dimen_100dp" />
+    <LinearLayout
+        android:id="@+id/guide_page_title_and_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/guide_vp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/guide_page_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guide_page_title_one"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_26sp" />
+
+        <TextView
+            android:id="@+id/guide_page_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_6dp"
+            android:text="@string/guide_page_content_one"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_14sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/guide_ll_point"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/guide_vp"
+        android:layout_below="@id/guide_page_title_and_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/dimen_40dp"
         android:orientation="horizontal"></LinearLayout>
 
     <TextView
@@ -43,7 +70,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="@dimen/dimen_30dp"
-        android:layout_marginBottom="@dimen/dimen_50dp"
+        android:layout_marginBottom="@dimen/dimen_30dp"
         android:background="@drawable/shape_guide_btn"
         android:gravity="center"
         android:text="@string/guide_experience_now"

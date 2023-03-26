@@ -25,6 +25,8 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
 
     private ViewPager mGuideVp;
     private int[] mImageIdArray; // 图片资源的数组
+    private String[] mTitleIdArray; // 标题资源的数组
+    private String[] mContentIdArray; // 内容资源的数组
     private List<View> mViewList; // 图片资源的集合
     private ViewGroup mGuideLlPoint; // 放置圆点
     //实例化原点View
@@ -32,6 +34,7 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
     private ImageView[] mIvPointArray;
     //最后一页的按钮
     private TextView mGuideTvExperienceNow, mGuideTvSkip;
+    private TextView mGuidePageTitle, mGuidePageContent;
 
     @Override
     protected int initLayout() {
@@ -53,6 +56,8 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
         }
         mGuideTvSkip = (TextView) findViewById(R.id.guide_tv_skip);
         mGuideTvExperienceNow = (TextView) findViewById(R.id.guide_tv_experience_now);
+        mGuidePageTitle = (TextView) findViewById(R.id.guide_page_title);
+        mGuidePageContent = (TextView) findViewById(R.id.guide_page_content);
         mGuideTvSkip.setOnClickListener(this);
         mGuideTvExperienceNow.setOnClickListener(this);
         // 加载ViewPager
@@ -116,6 +121,12 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
         // 实例化图片资源
         mImageIdArray = new int[]{R.mipmap.guide_img_one, R.mipmap.guide_img_two,
                 R.mipmap.guide_img_three, R.mipmap.guide_img_four};
+        // 实例化标题资源
+        mTitleIdArray = new String[]{getResources().getString(R.string.guide_page_title_one), getResources().getString(R.string.guide_page_title_two),
+                getResources().getString(R.string.guide_page_title_three), getResources().getString(R.string.guide_page_title_four)};
+        // 实例化内容资源
+        mContentIdArray = new String[]{getResources().getString(R.string.guide_page_content_one), getResources().getString(R.string.guide_page_content_two),
+                getResources().getString(R.string.guide_page_content_three), getResources().getString(R.string.guide_page_content_four)};
         mViewList = new ArrayList<>();
         // 获取一个 Layout参数，设置为全屏
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -145,6 +156,8 @@ public class GuideActivity extends BaseActivity implements ViewPager.OnPageChang
      */
     @Override
     public void onPageSelected(int position) {
+        mGuidePageTitle.setText(mTitleIdArray[position]); // 标题
+        mGuidePageContent.setText(mContentIdArray[position]); // 内容
         // 循环设置当前页的标记图
         int length = mImageIdArray.length;
         for (int i = 0; i < length; i++) {

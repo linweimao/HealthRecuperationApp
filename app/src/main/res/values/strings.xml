@@ -2,6 +2,14 @@
     <string name="app_name">康养</string>
     <string name="guide_skip">跳过</string>
     <string name="guide_experience_now">立即体验</string>
+    <string name="guide_page_title_one">康养视频列表</string>
+    <string name="guide_page_title_two">热点资讯新闻</string>
+    <string name="guide_page_title_three">天气信息查询</string>
+    <string name="guide_page_title_four">贴心实用工具</string>
+    <string name="guide_page_content_one">体验 康养 健康养老的康养视频</string>
+    <string name="guide_page_content_two">体验 康养 实时查询的热点资讯新闻</string>
+    <string name="guide_page_content_three">体验 康养 操作简易的天气信息查询</string>
+    <string name="guide_page_content_four">体验 康养 快捷方便的贴心实用工具</string>
     <string name="main_welcome">欢迎来到康养APP</string>
     <string name="login">登录</string>
     <string name="login_point_out">输入您的账号以登录</string>
