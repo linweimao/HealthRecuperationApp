@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.lwm.healthrecuperationapp.R;
+import com.lwm.healthrecuperationapp.activity.ContactUsActivity;
 import com.lwm.healthrecuperationapp.activity.LoginActivity;
 import com.lwm.healthrecuperationapp.activity.MyCollectActivity;
 
@@ -69,7 +70,7 @@ public class MyFragment extends BaseFragment {
                 break;
 
             case R.id.rl_contact_us: // 联系我们
-
+                navigateTo(ContactUsActivity.class);
                 break;
             case R.id.rl_logout: // 退出登录
                 removeByKey("token");

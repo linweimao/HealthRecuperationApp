@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_dialog_callphone_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/my_contact_us_dialog_title"
+        android:textColor="@color/color_112950"
+        android:textSize="@dimen/size_24sp" />
+
+    <TextView
+        android:id="@+id/tv_contact_us_dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_25dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:text="@string/my_contact_us_dialog_message"
+        android:textColor="@color/color_112950"
+        android:textSize="@dimen/size_18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_marginVertical="@dimen/dimen_20dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dimen_25dp">
+
+        <TextView
+            android:id="@+id/tv_dialog_negative"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/my_contact_us_dialog_negativebtn"
+            android:textColor="@color/color_0065ff"
+            android:textSize="@dimen/size_18sp"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_dialog_positive"
+            android:layout_width="@dimen/dimen_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_dialog_callphone_define_bg"
+            android:gravity="center"
+            android:text="@string/my_contact_us_dialog_positivebtn"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>
