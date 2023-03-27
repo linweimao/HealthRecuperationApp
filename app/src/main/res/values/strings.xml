@@ -19,14 +19,11 @@
     <string name="register_account_info_hint">输入您需要注册的账号信息</string>
     <string name="register_account_number">有账号？</string>
     <string name="register_log_in"><u>去登录</u></string>
-
-
     <string name="account_hint">请输入您的用户名</string>
     <string name="pwd_hint">请输入密码</string>
     <string name="login_success">登录成功</string>
     <string name="login_fail">登录失败</string>
     <string name="search_hint">搜索你喜欢的视频</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="refresh_toast">暂时无数据</string>
     <string name="loadmore_toast">没有更多数据</string>
@@ -71,5 +68,14 @@
     <string name="hot_news_item_category_content">健康</string>
     <string name="hot_news_item_time">时间：</string>
     <string name="hot_news_item_time_content">2023-03-23 16:29:00</string>
-
+    <string name="home_hi_name_null">Hi ，</string>
+    <string name="home_hi_name">Hi %s，</string>
+    <string name="home_welcome_back">欢迎回来！</string>
+    <string name="home_nursing_list">护工列表</string>
+    <string name="home_medication_reminder">服药提醒</string>
+    <string name="home_video_call">视频通话</string>
+    <string name="home_weather_info">天气信息</string>
+    <string name="home_flashlight">手电筒</string>
+    <string name="home_health_article">健康文章</string>
+    <string name="home_view_all">查看全部</string>
 </resources>

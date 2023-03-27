@@ -1,13 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_f5f6f8"
     tools:context=".fragment.HomeFragment">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_280dp"
+        android:background="@mipmap/home_bg" />
+
     <TextView
+        android:id="@+id/tv_hi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_24dp"
+        android:layout_marginTop="@dimen/dimen_50dp"
+        android:text="@string/home_hi_name"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/size_17sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_hi_name"
+        android:layout_marginLeft="@dimen/dimen_24dp"
+        android:text="@string/home_welcome_back"
+        android:textColor="@color/color_9ebaed"
+        android:textSize="@dimen/size_14sp" />
+
+    <LinearLayout
+        android:id="@+id/line_utility_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_24dp"
+        android:layout_marginTop="@dimen/dimen_125dp"
+        android:background="@drawable/shape_home_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/line_nursing_list"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_45dp"
+                    android:layout_height="@dimen/dimen_45dp"
+                    android:src="@mipmap/icon_nursing_list" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:text="@string/home_nursing_list"
+                    android:textColor="@color/color_112950"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:id="@+id/line_medication_reminder"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_45dp"
+                    android:layout_height="@dimen/dimen_45dp"
+                    android:src="@mipmap/icon_medication_reminder" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:text="@string/home_medication_reminder"
+                    android:textColor="@color/color_112950"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:background="@color/color_e5e5e5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/line_video_call"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_45dp"
+                    android:layout_height="@dimen/dimen_45dp"
+                    android:src="@mipmap/icon_video_call" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:text="@string/home_video_call"
+                    android:textColor="@color/color_112950"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:id="@+id/line_weather_info"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_45dp"
+                    android:layout_height="@dimen/dimen_45dp"
+                    android:src="@mipmap/icon_weather_info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:text="@string/home_weather_info"
+                    android:textColor="@color/color_112950"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/color_e5e5e5" />
+
+            <LinearLayout
+                android:id="@+id/line_flashlight"
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_45dp"
+                    android:layout_height="@dimen/dimen_45dp"
+                    android:src="@mipmap/icon_flashlight" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:text="@string/home_flashlight"
+                    android:textColor="@color/color_112950"
+                    android:textSize="@dimen/size_16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/line_utility_bar"
+        android:layout_marginHorizontal="@dimen/dimen_24dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen_15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/dimen_0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/home_health_article"
+                android:textColor="@color/color_222222"
+                android:textSize="@dimen/size_24sp" />
+
+            <LinearLayout
+                android:id="@+id/line_view_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_9dp"
+                    android:text="@string/home_view_all"
+                    android:textColor="@color/color_606672"
+                    android:textSize="@dimen/size_16sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_14dp"
+                    android:layout_height="@dimen/dimen_18dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/icon_home_right_arrow" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_health_article"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</RelativeLayout>

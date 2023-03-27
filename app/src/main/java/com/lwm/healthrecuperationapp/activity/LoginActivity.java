@@ -73,6 +73,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     showToast(getString(R.string.pwd_hint));
                     return;
                 }
+                saveStringToSp("account", account);
                 login(account, pwd);
                 break;
             case R.id.img_pwd_open_close: // 隐藏显示密码
