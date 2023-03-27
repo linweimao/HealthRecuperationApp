@@ -22,7 +22,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class HomeFragment extends BaseFragment {
+
+/**
+ * VideoFragment的载体 Fragment
+ */
+public class VideoListCarrierFragment extends BaseFragment {
 
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private String[] mTitles;
@@ -30,11 +34,11 @@ public class HomeFragment extends BaseFragment {
     private SlidingTabLayout mSlidingtablayout;
     private ViewPager mViewPager;
 
-    public HomeFragment() {
+    public VideoListCarrierFragment() {
     }
 
-    public static HomeFragment newInstance() {
-        HomeFragment fragment = new HomeFragment();
+    public static VideoListCarrierFragment newInstance() {
+        VideoListCarrierFragment fragment = new VideoListCarrierFragment();
         return fragment;
     }
 
@@ -45,7 +49,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected int initLayout() {
-        return R.layout.fragment_home;
+        return R.layout.fragment_video_list_carrier;
     }
 
     @Override
@@ -83,7 +87,7 @@ public class HomeFragment extends BaseFragment {
 
                                 // 当 ViewPager下 Fragment 很多时切换会出现异常(下标越界、页面空白)
                                 // 解决方案：
-                                //    设置预加载(启动 HomeFragment 时预加载全部 Fragment)
+                                //    设置预加载(启动 VideoListCarrierFragment 时预加载全部 Fragment)
                                 mViewPager.setOffscreenPageLimit(mFragments.size());
                                 mViewPager.setAdapter(new HomeAdapter(getFragmentManager(), mTitles, mFragments));
                                 mSlidingtablayout.setViewPager(mViewPager); // SlidingTabLayout 绑定 ViewPager
