@@ -9,6 +9,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.adapter.MyPagerAdapter;
 import com.lwm.healthrecuperationapp.entity.TabEntity;
+import com.lwm.healthrecuperationapp.fragment.HomeFragment;
 import com.lwm.healthrecuperationapp.fragment.VideoListCarrierFragment;
 import com.lwm.healthrecuperationapp.fragment.HotNewsCarrierFragment;
 import com.lwm.healthrecuperationapp.fragment.MyFragment;
@@ -18,13 +19,13 @@ import java.util.ArrayList;
 
 public class HomeActivity extends BaseActivity {
 
-    private String[] mTitles = {"视频", "资讯", "我的"};
+    private String[] mTitles = {"首页", "视频", "资讯", "我的"};
     private int[] mIconUnselectIds = {
-            R.mipmap.videolist_unselect, R.mipmap.collect_unselect,
-            R.mipmap.my_unselect}; // 未选中时的图标
+            R.mipmap.home_unselect, R.mipmap.videolist_unselect,
+            R.mipmap.collect_unselect, R.mipmap.my_unselect}; // 未选中时的图标
     private int[] mIconSelectIds = {
-            R.mipmap.videolist_selected, R.mipmap.collect_selected,
-            R.mipmap.my_selected}; // 选中时的图标
+            R.mipmap.home_selected, R.mipmap.videolist_selected,
+            R.mipmap.collect_selected, R.mipmap.my_selected}; // 选中时的图标
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private ViewPager mViewpager;
@@ -42,6 +43,7 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        mFragments.add(HomeFragment.newInstance());
         mFragments.add(VideoListCarrierFragment.newInstance());
         mFragments.add(HotNewsCarrierFragment.newInstance());
         mFragments.add(MyFragment.newInstance());
