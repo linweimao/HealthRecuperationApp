@@ -83,4 +83,12 @@
     <string name="health_author">作者：%s</string>
     <string name="health_time">时间：%s</string>
     <string name="health_article_list_empty_data">暂无数据！</string>
+    <!-- PLEASE KEEP THIS App ID IN SAFE PLACE -->
+    <!-- Get your own App ID at https://dashboard.agora.io/ -->
+    <!-- After you entered the App ID, remove <##> outside of Your App ID -->
+    <string name="agora_app_id">deb2822e06b34da388deeb9682355997</string>
+    <!-- Obtain a temp Access Token at https://dashboard.agora.io -->
+    <!-- You will need to deploy your own token server for production release -->
+    <!-- Leave this value empty if Security keys/Token is not enabled for your project -->
+    <string name="agora_access_token">007eJxTYDhwN+qqxO9zymulgp48VZ5m8+zT/endG+bOX6X9aK7CvNkMCgwpqUlGFkZGqQZmScYmKYnGFhYpqalJlmYWRsamppaW5mYSyikNgYwMdpnNDIxQCOLzMjim5xclhpSW5BdlJuYwMAAAOBkj8A==</string>
 </resources>

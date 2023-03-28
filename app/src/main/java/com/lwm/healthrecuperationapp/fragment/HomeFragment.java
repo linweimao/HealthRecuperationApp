@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.activity.HealthArticleListActivity;
 import com.lwm.healthrecuperationapp.activity.HotNewsDetailActivity;
+import com.lwm.healthrecuperationapp.activity.VideoChatActivity;
 import com.lwm.healthrecuperationapp.adapter.HealthAdapter;
 import com.lwm.healthrecuperationapp.api.Api;
 import com.lwm.healthrecuperationapp.api.RequestCallback;
@@ -155,8 +156,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.line_medication_reminder:
 
                 break;
-            case R.id.line_video_call:
-
+            case R.id.line_video_call: // 视频通话
+                navigateTo(VideoChatActivity.class);
                 break;
             case R.id.line_weather_info:
 

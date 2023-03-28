@@ -57,4 +57,6 @@
     <color name="color_f5f6f8">#F5F6F8</color>
     <color name="color_606672">#606672</color>
     <color name="color_9ebaed">#9EBAED</color>
+    <color name="localBackground">#827b92</color>
+    <color name="remoteBackground">#484258</color>
 </resources>
