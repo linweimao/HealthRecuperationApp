@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.io.Serializable;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import xyz.doikki.videoplayer.player.VideoViewManager;
@@ -71,9 +73,16 @@ public abstract class BaseFragment extends Fragment {
     }
 
     // 跳转带参数
-    public void navigateToWithBundle(Class cls,Bundle bundle) {
+    public void navigateToWithBundle(Class cls, Bundle bundle) {
         Intent intent = new Intent(getActivity(), cls);
         intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    // 跳转带传递对象
+    public void navigateToWithSerializableObject(Class cls, String key, Serializable object) {
+        Intent intent = new Intent(getActivity(), cls);
+        intent.putExtra(key, object);
         startActivity(intent);
     }
 

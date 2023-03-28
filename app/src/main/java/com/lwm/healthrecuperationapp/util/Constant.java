@@ -26,7 +26,7 @@ public class Constant {
     /**
      * 聚合 APP KEY
      */
-    public static final String JUHE_APP_KEY = "282a672c1b835498438e530191ddae2b";
+    public static final String JUHE_APP_KEY = "28171d0749faa725901389a57b758e81";
     /**
      * 聚合网址
      */

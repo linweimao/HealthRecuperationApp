@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.lwm.healthrecuperationapp.R;
+import com.lwm.healthrecuperationapp.activity.HealthArticleListActivity;
 import com.lwm.healthrecuperationapp.activity.HotNewsDetailActivity;
 import com.lwm.healthrecuperationapp.adapter.HealthAdapter;
 import com.lwm.healthrecuperationapp.api.Api;
@@ -44,8 +45,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private String mName; // 用户名
     private LinearLayoutManager mLinearLayoutManager;
     private HealthAdapter mHealthAdapter;
-    private List<NewsInfo> datas = new ArrayList<>();
     private List<NewsInfo> threeDatas = new ArrayList<>();
+    private News mTransmitNews = null;
 
     private Handler mHandler = new Handler() {
         @Override
@@ -105,7 +106,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             public void onclick(View view) {
                 int position = mRvHealthArticle.getChildAdapterPosition(view);
                 Log.i(TAG, "onclick：position=" + position);
-                String newsUrl = datas.get(position).getUrl();
+                String newsUrl = threeDatas.get(position).getUrl();
                 Intent intent = new Intent(getActivity(), HotNewsDetailActivity.class);
                 intent.putExtra(Constant.URL, newsUrl);
                 startActivity(intent);
@@ -129,12 +130,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     public void onSuccess(String res) {
                         Gson gson = new Gson();
                         News news = gson.fromJson(res, News.class);
+                        mTransmitNews = news;
                         NewsInfo[] data = news.getResult().getData();
                         List<NewsInfo> newsInfos = Arrays.asList(data);
                         for (int i = 0; i < 3; i++) {
                             threeDatas.add(newsInfos.get(i));
                         }
-                        datas = newsInfos;
                         mHandler.sendEmptyMessage(0);
                     }
 
@@ -163,8 +164,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.line_flashlight:
 
                 break;
-            case R.id.line_view_all:
-
+            case R.id.line_view_all: // 查看全部
+                // 如果 mTransmitNews对象为 null则 Toast提示
+                if (null == mTransmitNews) {
+                    showToast(getResources().getString(R.string.health_article_list_empty_data));
+                } else {
+                    navigateToWithSerializableObject(HealthArticleListActivity.class, "news_data", mTransmitNews);
+                }
                 break;
         }
     }

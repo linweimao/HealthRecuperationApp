@@ -2,9 +2,10 @@ package com.lwm.healthrecuperationapp.entity;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class News {
+public class News implements Serializable {
     private String reason;
     @SerializedName("error_code")
     private int errorCode;
@@ -34,7 +35,7 @@ public class News {
         this.result = result;
     }
 
-    public  class Result {
+    public class Result implements Serializable {
         String stat;
         NewsInfo[] data;
 

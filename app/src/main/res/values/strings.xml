@@ -82,4 +82,5 @@
     <string name="home_understanding_healthier">了解更健康</string>
     <string name="health_author">作者：%s</string>
     <string name="health_time">时间：%s</string>
+    <string name="health_article_list_empty_data">暂无数据！</string>
 </resources>

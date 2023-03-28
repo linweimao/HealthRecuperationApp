@@ -1,6 +1,8 @@
 package com.lwm.healthrecuperationapp.entity;
 
-public class NewsInfo {
+import java.io.Serializable;
+
+public class NewsInfo implements Serializable {
     private String uniquekey;
     private String title;
     private String date;
