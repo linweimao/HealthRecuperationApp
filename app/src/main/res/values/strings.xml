@@ -78,4 +78,8 @@
     <string name="home_flashlight">手电筒</string>
     <string name="home_health_article">健康文章</string>
     <string name="home_view_all">查看全部</string>
+    <string name="home_health_knowledge">健康知识</string>
+    <string name="home_understanding_healthier">了解更健康</string>
+    <string name="health_author">作者：%s</string>
+    <string name="health_time">时间：%s</string>
 </resources>

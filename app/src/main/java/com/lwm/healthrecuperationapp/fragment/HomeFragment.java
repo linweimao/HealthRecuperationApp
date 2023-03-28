@@ -1,19 +1,38 @@
 package com.lwm.healthrecuperationapp.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
 import com.lwm.healthrecuperationapp.R;
+import com.lwm.healthrecuperationapp.activity.HotNewsDetailActivity;
+import com.lwm.healthrecuperationapp.adapter.HealthAdapter;
+import com.lwm.healthrecuperationapp.api.Api;
+import com.lwm.healthrecuperationapp.api.RequestCallback;
+import com.lwm.healthrecuperationapp.entity.News;
+import com.lwm.healthrecuperationapp.entity.NewsInfo;
+import com.lwm.healthrecuperationapp.util.Constant;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 实用工具 Fragment
  */
 public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
+    private static final String TAG = HomeFragment.class.getSimpleName();
     private TextView mTvHiName; // 名字
     private LinearLayout mLineNursingList; // 护工列表
     private LinearLayout mLineMedicationReminder; // 服药提醒
@@ -23,6 +42,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout mLineViewAll; // 查看全部
     private RecyclerView mRvHealthArticle; // 健康文章列表
     private String mName; // 用户名
+    private LinearLayoutManager mLinearLayoutManager;
+    private HealthAdapter mHealthAdapter;
+    private List<NewsInfo> datas = new ArrayList<>();
+    private List<NewsInfo> threeDatas = new ArrayList<>();
+
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    // 将数据设置进 HealthAdapter
+                    mHealthAdapter.setDatas(threeDatas);
+                    mHealthAdapter.notifyDataSetChanged(); // 通知 RecyclerView 刷新页面(刷新数据)
+                    break;
+            }
+        }
+    };
 
     public HomeFragment() {
 
@@ -58,11 +95,54 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mLineVideoCall.setOnClickListener(this);
         mLineWeatherInfo.setOnClickListener(this);
         mLineViewAll.setOnClickListener(this);
+        mLinearLayoutManager = new LinearLayoutManager(getActivity());
+        mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        mRvHealthArticle.setLayoutManager(mLinearLayoutManager);
+        mHealthAdapter = new HealthAdapter(getActivity());
+        mRvHealthArticle.setAdapter(mHealthAdapter);
+        mHealthAdapter.setOnItemClick(new HealthAdapter.OnItemClick() {
+            @Override
+            public void onclick(View view) {
+                int position = mRvHealthArticle.getChildAdapterPosition(view);
+                Log.i(TAG, "onclick：position=" + position);
+                String newsUrl = datas.get(position).getUrl();
+                Intent intent = new Intent(getActivity(), HotNewsDetailActivity.class);
+                intent.putExtra(Constant.URL, newsUrl);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
     protected void initData() {
         getName();
+        getHealthData();
+    }
+
+    /**
+     * 获取健康文章列表数据
+     */
+    private void getHealthData() {
+        Api.configJuhe(Constant.JUHE_URL + "?type=" + Constant.HEALTH_TITLES + "&key=" + Constant.JUHE_APP_KEY)
+                .getJuheRequest(getActivity(), new RequestCallback() {
+                    @Override
+                    public void onSuccess(String res) {
+                        Gson gson = new Gson();
+                        News news = gson.fromJson(res, News.class);
+                        NewsInfo[] data = news.getResult().getData();
+                        List<NewsInfo> newsInfos = Arrays.asList(data);
+                        for (int i = 0; i < 3; i++) {
+                            threeDatas.add(newsInfos.get(i));
+                        }
+                        datas = newsInfos;
+                        mHandler.sendEmptyMessage(0);
+                    }
+
+                    @Override
+                    public void onFailure(Exception e) {
+                        showToastSync("网络请求失败，原因：" + e.getMessage());
+                    }
+                });
     }
 
     @Override

@@ -8,6 +8,8 @@ public class Constant {
      * 新闻主题
      */
     public static final String[] NEWS_TITLES = {"热门", "社会", "国内", "娱乐", "体育", "军事", "科技"};
+    public static final String HEALTH_TITLES = "jiankang";
+
     /**
      * 新闻类型,与新闻主题一一对应
      */

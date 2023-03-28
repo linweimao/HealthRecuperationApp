@@ -8,7 +8,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_280dp"
+        android:layout_height="@dimen/dimen_230dp"
         android:background="@mipmap/home_bg" />
 
     <TextView
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dimen_24dp"
-        android:layout_marginTop="@dimen/dimen_50dp"
+        android:layout_marginTop="@dimen/dimen_20dp"
         android:text="@string/home_hi_name"
         android:textColor="@color/color_ffffff"
         android:textSize="@dimen/size_17sp" />
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_24dp"
-        android:layout_marginTop="@dimen/dimen_125dp"
+        android:layout_marginTop="@dimen/dimen_90dp"
         android:background="@drawable/shape_home_bg"
         android:orientation="vertical">
 
@@ -48,14 +48,14 @@
                 android:id="@+id/line_nursing_list"
                 android:layout_width="@dimen/dimen_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_marginVertical="@dimen/dimen_14dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/dimen_45dp"
-                    android:layout_height="@dimen/dimen_45dp"
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
                     android:src="@mipmap/icon_nursing_list" />
 
                 <TextView
@@ -76,14 +76,14 @@
                 android:id="@+id/line_medication_reminder"
                 android:layout_width="@dimen/dimen_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_marginVertical="@dimen/dimen_14dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/dimen_45dp"
-                    android:layout_height="@dimen/dimen_45dp"
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
                     android:src="@mipmap/icon_medication_reminder" />
 
                 <TextView
@@ -110,14 +110,14 @@
                 android:id="@+id/line_video_call"
                 android:layout_width="@dimen/dimen_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_marginVertical="@dimen/dimen_14dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/dimen_45dp"
-                    android:layout_height="@dimen/dimen_45dp"
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
                     android:src="@mipmap/icon_video_call" />
 
                 <TextView
@@ -138,14 +138,14 @@
                 android:id="@+id/line_weather_info"
                 android:layout_width="@dimen/dimen_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_marginVertical="@dimen/dimen_14dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/dimen_45dp"
-                    android:layout_height="@dimen/dimen_45dp"
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
                     android:src="@mipmap/icon_weather_info" />
 
                 <TextView
@@ -166,14 +166,14 @@
                 android:id="@+id/line_flashlight"
                 android:layout_width="@dimen/dimen_0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/dimen_16dp"
+                android:layout_marginVertical="@dimen/dimen_14dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="@dimen/dimen_45dp"
-                    android:layout_height="@dimen/dimen_45dp"
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
                     android:src="@mipmap/icon_flashlight" />
 
                 <TextView
@@ -197,7 +197,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/dimen_15dp"
+            android:layout_marginTop="@dimen/dimen_12dp"
             android:orientation="horizontal">
 
             <TextView
@@ -206,7 +206,7 @@
                 android:layout_weight="1"
                 android:text="@string/home_health_article"
                 android:textColor="@color/color_222222"
-                android:textSize="@dimen/size_24sp" />
+                android:textSize="@dimen/size_20sp" />
 
             <LinearLayout
                 android:id="@+id/line_view_all"
@@ -221,11 +221,11 @@
                     android:layout_marginRight="@dimen/dimen_9dp"
                     android:text="@string/home_view_all"
                     android:textColor="@color/color_606672"
-                    android:textSize="@dimen/size_16sp" />
+                    android:textSize="@dimen/size_14sp" />
 
                 <ImageView
-                    android:layout_width="@dimen/dimen_14dp"
-                    android:layout_height="@dimen/dimen_18dp"
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="@dimen/dimen_12dp"
                     android:layout_gravity="center_vertical"
                     android:src="@mipmap/icon_home_right_arrow" />
             </LinearLayout>
@@ -234,6 +234,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_health_article"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_5dp" />
     </LinearLayout>
 </RelativeLayout>

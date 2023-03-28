@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@drawable/shape_health_bg"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/dimen_15dp"
+        android:paddingLeft="@dimen/dimen_15dp">
+
+        <TextView
+            android:id="@+id/tv_health_title"
+            android:layout_width="@dimen/dimen_180dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="标题"
+            android:textColor="@color/color_112950"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_health_author"
+            android:layout_width="@dimen/dimen_180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/health_author"
+            android:textColor="@color/color_606672"
+            android:textSize="@dimen/size_14sp" />
+
+        <TextView
+            android:id="@+id/tv_health_time"
+            android:layout_width="@dimen/dimen_180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/health_time"
+            android:textColor="@color/color_606672"
+            android:textSize="@dimen/size_14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/dimen_150dp"
+        android:layout_height="@dimen/dimen_95dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dimen_15dp"
+        android:background="@mipmap/item_health_bg"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_10dp"
+        android:paddingTop="@dimen/dimen_5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_health_knowledge"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_understanding_healthier"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_14sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
