@@ -68,6 +68,9 @@
         <activity
             android:name=".activity.VideoChatActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.EmergencyCallActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
