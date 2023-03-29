@@ -75,6 +75,11 @@
     <string name="home_medication_reminder">服药提醒</string>
     <string name="home_video_call">视频通话</string>
     <string name="home_emergency_call">紧急呼叫</string>
+    <string name="fill_in_contacts">请填写紧急联系人</string>
+    <string name="emergency_contact_one">紧急联系人1：</string>
+    <string name="emergency_contact_two">紧急联系人2：</string>
+    <string name="emergency_contact_hint">请输入紧急联系人的手机号码</string>
+    <string name="emergency_contact_define">确定</string>
     <string name="home_weather_info">天气信息</string>
     <string name="home_flashlight">手电筒</string>
     <string name="home_health_article">健康文章</string>
