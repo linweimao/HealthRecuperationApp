@@ -80,7 +80,11 @@
     <string name="emergency_contact_one">紧急联系人1：</string>
     <string name="emergency_contact_two">紧急联系人2：</string>
     <string name="emergency_contact_hint">请输入紧急联系人的手机号码</string>
+    <string name="emergency_contact1">请输入紧急联系人1的手机号码</string>
+    <string name="emergency_contact2">请输入紧急联系人2的手机号码</string>
+    <string name="emergency_contact">紧急联系人</string>
     <string name="emergency_contact_define">确定</string>
+    <string name="reset_emergency_contacts">重置紧急联系人</string>
     <string name="home_weather_info">天气信息</string>
     <string name="home_flashlight">手电筒</string>
     <string name="home_health_article">健康文章</string>

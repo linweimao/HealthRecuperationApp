@@ -81,6 +81,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         return sp.getBoolean(key, true);
     }
 
+    protected void removeByKey(String key) {
+        SharedPreferences sp = getSharedPreferences("sp_lwm", MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.remove(key);
+        edit.commit();
+    }
+
     /**
      * 子类可通过此方法直接拿到VideoViewManager
      */
