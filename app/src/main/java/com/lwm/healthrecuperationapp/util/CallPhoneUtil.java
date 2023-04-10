@@ -18,10 +18,10 @@ public class CallPhoneUtil {
     // 判断是否拥有此权限
     public static void checkPermission(Context context, String permission) {
         if (PermissionUtils.checkPermissions(context, permission)) {
+            ActivityCompat.requestPermissions((Activity) context, new String[]{permission}, 1);
+        } else {
             // 有此权限
             call(context);
-        } else {
-            ActivityCompat.requestPermissions((Activity) context, new String[]{permission}, 1);
         }
     }
 

@@ -56,6 +56,7 @@
     <string name="my_contact_us_dialog_message">您将拨打 %s 此号码。</string>
     <string name="my_contact_us_dialog_positivebtn">确定</string>
     <string name="my_contact_us_dialog_negativebtn">取消</string>
+    <string name="my_contact_us_unauthorized_temporarily">您暂未授权此权限！</string>
     <string name="my_setting">设置</string>
     <string name="my_add_emergency_contact">添加紧急联系人</string>
     <string name="my_safeguarding_health">保障自己和家人的身体健康</string>

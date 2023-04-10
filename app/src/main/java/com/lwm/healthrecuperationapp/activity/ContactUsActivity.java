@@ -71,7 +71,7 @@ public class ContactUsActivity extends BaseActivity implements View.OnClickListe
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     CallPhoneUtil.call(this);
                 } else {
-                    showToast("");
+                    showToast(getResources().getString(R.string.my_contact_us_unauthorized_temporarily));
                 }
             default:
         }
