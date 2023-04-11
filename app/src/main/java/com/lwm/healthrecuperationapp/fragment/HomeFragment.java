@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.gson.Gson;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.activity.EmergencyCallActivity;
+import com.lwm.healthrecuperationapp.activity.FlashActivity;
 import com.lwm.healthrecuperationapp.activity.HealthArticleListActivity;
 import com.lwm.healthrecuperationapp.activity.HotNewsDetailActivity;
 import com.lwm.healthrecuperationapp.adapter.HealthAdapter;
@@ -96,6 +97,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mLineMedicationReminder.setOnClickListener(this);
         mLineVideoCall.setOnClickListener(this);
         mLineWeatherInfo.setOnClickListener(this);
+        mLineFlashlight.setOnClickListener(this);
         mLineViewAll.setOnClickListener(this);
         mLinearLayoutManager = new LinearLayoutManager(getActivity());
         mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -162,8 +164,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.line_weather_info:
 
                 break;
-            case R.id.line_flashlight:
-
+            case R.id.line_flashlight: // 手电筒
+                navigateTo(FlashActivity.class);
                 break;
             case R.id.line_view_all: // 查看全部
                 // 如果 mTransmitNews对象为 null则 Toast提示

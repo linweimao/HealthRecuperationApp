@@ -71,6 +71,10 @@
         <activity
             android:name=".activity.EmergencyCallActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.FlashActivity"
+            android:exported="false"
+            android:theme="@style/DarkActionBarAppTheme" />
     </application>
 
 </manifest>

@@ -14,4 +14,9 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+
+    <style name="DarkActionBarAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/color_0065ff</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_0065ff</item>
+    </style>
 </resources>
