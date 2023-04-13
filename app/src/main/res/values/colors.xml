@@ -65,4 +65,5 @@
     <color name="color_6088f3">#6088f3</color>
     <color name="localBackground">#827b92</color>
     <color name="remoteBackground">#484258</color>
+    <color name="color_8000">#8000</color>
 </resources>

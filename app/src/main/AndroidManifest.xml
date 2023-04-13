@@ -11,8 +11,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <!-- 对于 Android 12.0 及以上设备，还需要添加如下权限： -->
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 对于 Android 12.0 及以上设备，还需要添加如下权限： -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -75,6 +74,19 @@
             android:name=".activity.FlashActivity"
             android:exported="false"
             android:theme="@style/DarkActionBarAppTheme" />
+        <activity
+            android:name=".activity.SelectCityActivity"
+            android:exported="false"
+            android:theme="@style/WeatherTheme" />
+        <activity
+            android:name=".activity.WeatherActivity"
+            android:exported="false"
+            android:theme="@style/WeatherTheme" />
+
+        <service
+            android:name=".service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

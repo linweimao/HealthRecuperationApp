@@ -419,6 +419,11 @@
     <dimen name="size_48sp">48sp</dimen>
     <dimen name="size_50sp">50sp</dimen>
     <dimen name="size_55sp">55sp</dimen>
+    <dimen name="size_56sp">56sp</dimen>
+    <dimen name="size_57sp">57sp</dimen>
+    <dimen name="size_58sp">58sp</dimen>
+    <dimen name="size_59sp">59sp</dimen>
+    <dimen name="size_60sp">60sp</dimen>
     <dimen name="local_preview_width">88dp</dimen>
     <dimen name="local_preview_height">117dp</dimen>
     <dimen name="local_back_icon_size">50dp</dimen>

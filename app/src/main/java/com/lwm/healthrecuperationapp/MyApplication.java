@@ -1,12 +1,13 @@
 package com.lwm.healthrecuperationapp;
 
-import android.app.Application;
 import android.content.SharedPreferences;
+
+import org.litepal.LitePalApplication;
 
 import skin.support.SkinCompatManager;
 import skin.support.app.SkinAppCompatViewInflater;
 
-public class MyApplication extends Application {
+public class MyApplication extends LitePalApplication {
 
     @Override
     public void onCreate() {

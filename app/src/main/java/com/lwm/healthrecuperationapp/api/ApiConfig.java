@@ -12,4 +12,7 @@ public class ApiConfig {
     public static final String NEWS_LIST = "/app/news/api/list"; // 资讯列表
     public static final String VIDEO_UPDATE_COUNT = "/app/videolist/updateCount"; // 更新点赞,收藏,评论
     public static final String VIDEO_MYCOLLECT = "/app/videolist/mycollect"; // 我的收藏
+
+    public static final String BING_BASE_URL = "https://cn.bing.com"; // 必应
+    public static final String BING_WALLPAPER = "/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN"; // 必应壁纸API
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_15dp"
+    android:background="@color/color_8000"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_15dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:text="@string/weather_life_advice"
+        android:textColor="@color/color_ffffff"
+        android:textSize="@dimen/size_20sp" />
+
+    <TextView
+        android:id="@+id/comfort_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_15dp"
+        android:textColor="@color/color_ffffff" />
+
+    <TextView
+        android:id="@+id/car_wash_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_15dp"
+        android:textColor="@color/color_ffffff" />
+
+    <TextView
+        android:id="@+id/sport_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_15dp"
+        android:textColor="@color/color_ffffff" />
+
+</LinearLayout>
