@@ -82,11 +82,17 @@
             android:name=".activity.WeatherActivity"
             android:exported="false"
             android:theme="@style/WeatherTheme" />
+        <activity
+            android:name=".activity.SetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:exported="false" />
 
         <service
             android:name=".service.AutoUpdateService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
     </application>
 
 </manifest>

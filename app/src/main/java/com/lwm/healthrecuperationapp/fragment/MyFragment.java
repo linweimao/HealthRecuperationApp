@@ -14,6 +14,7 @@ import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.activity.ContactUsActivity;
 import com.lwm.healthrecuperationapp.activity.LoginActivity;
 import com.lwm.healthrecuperationapp.activity.MyCollectActivity;
+import com.lwm.healthrecuperationapp.activity.SetActivity;
 import com.lwm.healthrecuperationapp.util.CallPhoneUtil;
 import com.lwm.healthrecuperationapp.util.StringUtils;
 
@@ -76,7 +77,7 @@ public class MyFragment extends BaseFragment {
     }
 
     @OnClick({R.id.img_header, R.id.rl_collect, R.id.rl_skin, R.id.rl_emergency_contact,
-            R.id.rl_contact_us, R.id.rl_logout, R.id.btn_add_now})
+            R.id.rl_contact_us, R.id.rl_setting, R.id.rl_logout, R.id.btn_add_now})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.img_header: // 头像
@@ -107,6 +108,9 @@ public class MyFragment extends BaseFragment {
                 break;
             case R.id.rl_contact_us: // 联系我们
                 navigateTo(ContactUsActivity.class);
+                break;
+            case R.id.rl_setting: // 设置
+                navigateTo(SetActivity.class);
                 break;
             case R.id.rl_logout: // 退出登录
                 removeByKey("token");

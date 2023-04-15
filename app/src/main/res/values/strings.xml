@@ -108,6 +108,10 @@
     <string name="weather_loading_failed">加载失败</string>
     <string name="weather_loading">正在加载...</string>
 
+    <!--关于我们-->
+    <string name="about_us">关于康养</string>
+    <string name="about_us_content">在互联网的高速发展下，医疗养老与计算机技术联系越来越紧密，养老行业需要与其进行有效融合，因此智慧养老的概念日益受到关注，智慧养老是指运用现代科技手段借助互联网高效传输与大数据的特点，为老年人提供便利的生活和健康护理服务，从而提高他们的生活质量和健康水平。</string>
+
     <!-- PLEASE KEEP THIS App ID IN SAFE PLACE -->
     <!-- Get your own App ID at https://dashboard.agora.io/ -->
     <!-- After you entered the App ID, remove <##> outside of Your App ID -->
