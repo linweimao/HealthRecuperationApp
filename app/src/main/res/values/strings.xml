@@ -48,9 +48,9 @@
     <string name="my_emergency_contact">紧急联系人</string>
     <string name="my_contact_us">联系我们</string>
     <string name="my_contact_us_email">邮箱</string>
-    <string name="my_contact_us_email_content">1203669885@qq.com</string>
+    <string name="my_contact_us_email_content">1203669222@qq.com</string>
     <string name="my_contact_us_phone">手机号码</string>
-    <string name="my_contact_us_phone_number">18318435002</string>
+    <string name="my_contact_us_phone_number">18318411122</string>
     <string name="my_contact_us_phone_number_reminder">温馨提示：点击号码进行拨打！</string>
     <string name="my_contact_us_dialog_title">温馨提示</string>
     <string name="my_contact_us_dialog_message">您将拨打 %s 此号码。</string>
