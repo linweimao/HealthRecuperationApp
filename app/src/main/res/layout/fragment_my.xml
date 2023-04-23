@@ -74,6 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_62dp"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -163,6 +164,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_bg"
                 android:orientation="vertical"
+                android:layout_marginTop="@dimen/dimen_10dp"
                 android:paddingHorizontal="@dimen/dimen_24dp">
 
                 <RelativeLayout
