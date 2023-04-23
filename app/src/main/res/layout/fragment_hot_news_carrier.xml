@@ -10,11 +10,12 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/hot_news_carrier_tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dimen_50dp"
+        android:background="@color/color_0065ff"
         app:tabIndicatorColor="@color/colorAccent"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/colorAccent"
-        app:tabTextColor="@color/black" />
+        app:tabTextColor="@color/white" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/hot_news_carrier_view_pager"
