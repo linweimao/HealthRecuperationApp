@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f5f6f8"
+    android:orientation="vertical"
+    tools:context=".activity.NurseInfoActivity">
+
+    <RelativeLayout
+        android:id="@+id/reLayout_nurse_info"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/color_0065ff"
+        android:paddingHorizontal="@dimen/dimen_24dp">
+
+        <ImageView
+            android:id="@+id/img_nurse_info_return"
+            android:layout_width="@dimen/dimen_12dp"
+            android:layout_height="@dimen/dimen_18dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_white_left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/nurseinfo"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_18sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_name"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_sex"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+
+        </LinearLayout>
+
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_age"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_phone_number"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_address"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_type_of_care"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_type_of_care"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nurseinfo_nursing_years"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_nursing_years"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -107,6 +107,23 @@
     <string name="weather_failed_to_obtain_weather_information">获取天气信息失败</string>
     <string name="weather_loading_failed">加载失败</string>
     <string name="weather_loading">正在加载...</string>
+    <!-- 护工列表 -->
+    <string name="nurse_id">护工编号：</string>
+    <string name="nurse_name">护工姓名：</string>
+    <string name="nurse_phone_number">手机号码：</string>
+    <string name="nurse_type_of_care">护理类型：</string>
+    <string name="nurse_creation_time">创建时间：</string>
+    <!-- 护工信息 -->
+    <string name="nurseinfo">护工信息</string>
+    <string name="nurseinfo_name">姓名</string>
+    <string name="nurseinfo_sex">性别</string>
+    <string name="nurseinfo_age">年龄</string>
+    <string name="nurseinfo_phone_number">手机号码</string>
+    <string name="nurseinfo_idcard">身份证号</string>
+    <string name="nurseinfo_address">详细地址</string>
+    <string name="nurseinfo_type_of_care">护理类型</string>
+    <string name="nurseinfo_nursing_years">护理年数</string>
+    <string name="query_failed">查询失败</string>
 
     <!--关于我们-->
     <string name="about_us">关于康养</string>

@@ -19,6 +19,7 @@ import com.lwm.healthrecuperationapp.activity.EmergencyCallActivity;
 import com.lwm.healthrecuperationapp.activity.FlashActivity;
 import com.lwm.healthrecuperationapp.activity.HealthArticleListActivity;
 import com.lwm.healthrecuperationapp.activity.HotNewsDetailActivity;
+import com.lwm.healthrecuperationapp.activity.NursingListActivity;
 import com.lwm.healthrecuperationapp.activity.SelectCityActivity;
 import com.lwm.healthrecuperationapp.adapter.HealthAdapter;
 import com.lwm.healthrecuperationapp.api.Api;
@@ -153,8 +154,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.line_nursing_list:
-
+            case R.id.line_nursing_list: // 护工列表
+                navigateTo(NursingListActivity.class);
                 break;
             case R.id.line_medication_reminder:
 

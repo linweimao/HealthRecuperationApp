@@ -25,4 +25,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_0065ff</item>
     </style>
 
+    <!-- 统一分割线 -->
+    <style name="style_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_0_5</item>
+        <item name="android:background">@color/color_f6f6f6</item>
+    </style>
+
 </resources>
