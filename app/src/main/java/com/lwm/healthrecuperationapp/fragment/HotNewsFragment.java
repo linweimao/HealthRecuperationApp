@@ -96,7 +96,7 @@ public class HotNewsFragment extends BaseFragment {
                     @Override
                     public void onFailure(Exception e) {
                         Looper.prepare();
-                        error("网络请求失败，原因：" + e.getMessage());
+                        error("HotNewsFragment 网络请求失败，原因：" + e.getMessage());
                     }
                 });
     }

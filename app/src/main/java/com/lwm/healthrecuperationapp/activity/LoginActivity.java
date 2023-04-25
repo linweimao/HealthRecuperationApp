@@ -24,6 +24,8 @@ import java.util.HashMap;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final String TAG = LoginActivity.class.getSimpleName();
+
     private EditText mEtAccount;
     private EditText mEtPwd;
     private ImageButton mBtnReturn;
@@ -121,7 +123,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
             @Override
             public void onFailure(Exception e) {
-                Log.e("onFailure", e.getMessage());
+                Log.e(TAG + " onFailure", e.getMessage());
             }
         });
     }

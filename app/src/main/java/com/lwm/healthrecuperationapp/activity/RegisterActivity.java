@@ -21,6 +21,8 @@ import java.util.HashMap;
 
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
+    private static final String TAG = RegisterActivity.class.getSimpleName();
+
     private EditText mEtAccount;
     private EditText mEtPwd;
     private Button mBtnRegister;
@@ -105,7 +107,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
 
             @Override
             public void onFailure(Exception e) {
-                Log.e("onFailure", e.getMessage());
+                Log.e(TAG + " onFailure", e.getMessage());
             }
         });
     }

@@ -39,6 +39,8 @@ import xyz.doikki.videoplayer.player.VideoView;
 
 public class MyCollectActivity extends BaseActivity implements OnItemChildClickListener {
 
+    private static final String TAG = MyCollectActivity.class.getSimpleName();
+
     private LinearLayout mEmptyLinear;
     private RecyclerView mRecyclerView;
     private MyCollectAdapter mMyCollectAdapter;
@@ -251,7 +253,7 @@ public class MyCollectActivity extends BaseActivity implements OnItemChildClickL
 
             @Override
             public void onFailure(Exception e) {
-                Log.d("onFailure", e.getMessage());
+                Log.d(TAG + " onFailure", e.getMessage());
             }
         });
     }

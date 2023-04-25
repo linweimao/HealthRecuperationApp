@@ -39,6 +39,8 @@ import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
 
+    private static final String TAG = WeatherActivity.class.getSimpleName();
+
     private TextView mTitleCity, mTitleUpdateTime, mDegreeText, mWeatherInfoText;
     private LinearLayout mForecastLayout;
     private TextView mAqiText, mPm25Text, mComfortText, mCarWashText, mSportText;
@@ -152,7 +154,7 @@ public class WeatherActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(WeatherActivity.this, getResources().getString(R.string.weather_failed_to_obtain_weather_information), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(WeatherActivity.this, TAG + " " + getResources().getString(R.string.weather_failed_to_obtain_weather_information), Toast.LENGTH_SHORT).show();
                         mSwipeRefresh.setRefreshing(false);
                     }
                 });
@@ -188,6 +190,7 @@ public class WeatherActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 e.printStackTrace();
+                Toast.makeText(WeatherActivity.this, TAG + " " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
