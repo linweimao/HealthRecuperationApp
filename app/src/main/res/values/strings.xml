@@ -112,7 +112,7 @@
     <string name="nurse_name">护工姓名：</string>
     <string name="nurse_phone_number">手机号码：</string>
     <string name="nurse_type_of_care">护理类型：</string>
-    <string name="nurse_creation_time">创建时间：</string>
+    <string name="nurse_update_time">更新时间：</string>
     <!-- 护工信息 -->
     <string name="nurseinfo">护工信息</string>
     <string name="nurseinfo_name">姓名</string>
@@ -136,5 +136,5 @@
     <!-- Obtain a temp Access Token at https://dashboard.agora.io -->
     <!-- You will need to deploy your own token server for production release -->
     <!-- Leave this value empty if Security keys/Token is not enabled for your project -->
-    <string name="agora_access_token">007eJxTYDhwN+qqxO9zymulgp48VZ5m8+zT/endG+bOX6X9aK7CvNkMCgwpqUlGFkZGqQZmScYmKYnGFhYpqalJlmYWRsamppaW5mYSyikNgYwMdpnNDIxQCOLzMjim5xclhpSW5BdlJuYwMAAAOBkj8A==</string>
+    <string name="agora_access_token">007eJxTYAjZIO12jEFXP40pZYGEqB+7V5fHHxbRGAfToEUf3i6Z1afAkJKaZGRhZJRqYJZkbJKSaGxhkZKammRpZmFkbGpqaWnuU+6e0hDIyBB7QoCVkQECQXxeBsf0/KLEkNKS/KLMxBwGBgACxx6U</string>
 </resources>

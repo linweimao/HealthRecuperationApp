@@ -106,12 +106,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nurse_creation_time"
+            android:text="@string/nurse_update_time"
             android:textColor="@color/color_112950"
             android:textSize="@dimen/size_18sp" />
 
         <TextView
-            android:id="@+id/tv_nurse_creation_time"
+            android:id="@+id/tv_nurse_update_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2022-05-12 17:20:00"

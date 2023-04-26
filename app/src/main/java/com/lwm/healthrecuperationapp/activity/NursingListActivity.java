@@ -55,8 +55,10 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void initData() {
         BmobQuery<NurseInfo> query = new BmobQuery<NurseInfo>();
-        // 按照更新时间降序
-        query.order("updatedAt");
+//        // 按照更新时间升序显示数据
+//        query.order("updatedAt");
+        // 按照更新时间降序显示数据
+        query.order("-updatedAt");
         // 执行查询，第一个参数为上下文，第二个参数为查找的回调
         query.findObjects(new FindListener<NurseInfo>() {
             @Override

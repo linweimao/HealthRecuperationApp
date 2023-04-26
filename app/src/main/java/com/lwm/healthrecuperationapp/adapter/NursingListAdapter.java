@@ -43,7 +43,7 @@ public class NursingListAdapter extends RecyclerView.Adapter<NursingListAdapter.
         holder.tvNurseName.setText(nurseInfo.getUsername()); // 护工姓名
         holder.tvNursePhoneNumber.setText(nurseInfo.getMobile()); // 护工手机号码
         holder.tvNurseTypeOfCare.setText(nurseInfo.getNursingtype()); // 护工护理类型
-        holder.tvNurseCreationTime.setText(nurseInfo.getCreatedAt()); // 创建时间
+        holder.tvNurseUpdateTime.setText(nurseInfo.getUpdatedAt()); // 更新时间
     }
 
     @Override
@@ -61,7 +61,7 @@ public class NursingListAdapter extends RecyclerView.Adapter<NursingListAdapter.
         private TextView tvNurseName; // 护工姓名
         private TextView tvNursePhoneNumber; // 护工手机号码
         private TextView tvNurseTypeOfCare; // 护工护理类型
-        private TextView tvNurseCreationTime; // 创建时间
+        private TextView tvNurseUpdateTime; // 更新时间
 
         public ViewHolder(View view) {
             super(view);
@@ -69,7 +69,7 @@ public class NursingListAdapter extends RecyclerView.Adapter<NursingListAdapter.
             tvNurseName = (TextView) view.findViewById(R.id.tv_nurse_name);
             tvNursePhoneNumber = (TextView) view.findViewById(R.id.tv_nurse_phone_number);
             tvNurseTypeOfCare = (TextView) view.findViewById(R.id.tv_nurse_type_of_care);
-            tvNurseCreationTime = (TextView) view.findViewById(R.id.tv_nurse_creation_time);
+            tvNurseUpdateTime = (TextView) view.findViewById(R.id.tv_nurse_update_time);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
