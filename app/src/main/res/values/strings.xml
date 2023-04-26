@@ -124,6 +124,23 @@
     <string name="nurseinfo_type_of_care">护理类型</string>
     <string name="nurseinfo_nursing_years">护理年数</string>
     <string name="query_failed">查询失败</string>
+    <!-- 服药提醒 -->
+    <string name="scan_drugs">扫描药品</string>
+    <string name="drug_list">药品列表</string>
+    <string name="drug_info">药品信息</string>
+    <string name="drug_barcode">药品条码</string>
+    <string name="drug_name">药品名称</string>
+    <string name="enterprise_name">企业名称</string>
+    <string name="brand_name">品牌名称</string>
+    <string name="drug_specifications">药品规格</string>
+    <string name="drugs_usage_and_dosage">用法用量</string>
+    <string name="drugs_entry_time">录入时间</string>
+    <string name="verify_drug_information">请核对药品信息。</string>
+    <string name="add_medication">添加药品</string>
+    <string name="please_align_the_qr_code">请对准二维码</string>
+    <string name="scan_code_failed">扫码识别失败，请重试</string>
+    <string name="drug_inf_not_entered">该药品信息暂未录入。</string>
+    <string name="drug_list_item_set_reminders">设置提醒</string>
 
     <!--关于我们-->
     <string name="about_us">关于康养</string>

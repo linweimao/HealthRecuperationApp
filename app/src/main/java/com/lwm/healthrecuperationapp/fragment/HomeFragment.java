@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
 import com.lwm.healthrecuperationapp.R;
+import com.lwm.healthrecuperationapp.activity.DrugCarrierActivity;
 import com.lwm.healthrecuperationapp.activity.EmergencyCallActivity;
 import com.lwm.healthrecuperationapp.activity.FlashActivity;
 import com.lwm.healthrecuperationapp.activity.HealthArticleListActivity;
@@ -157,8 +158,8 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             case R.id.line_nursing_list: // 护工列表
                 navigateTo(NursingListActivity.class);
                 break;
-            case R.id.line_medication_reminder:
-
+            case R.id.line_medication_reminder: // 服药提醒
+                navigateTo(DrugCarrierActivity.class);
                 break;
             case R.id.line_video_call: // 紧急呼叫
                 navigateTo(EmergencyCallActivity.class);

@@ -99,6 +99,22 @@
             android:name=".activity.NurseInfoActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false" />
+        <activity
+            android:name=".activity.DrugCarrierActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DrugInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DrugListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ScanActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
