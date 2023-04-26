@@ -40,14 +40,10 @@ public class NursingListAdapter extends RecyclerView.Adapter<NursingListAdapter.
     public void onBindViewHolder(NursingListAdapter.ViewHolder holder, int position) {
         NurseInfo nurseInfo = mDatas.get(position);
         holder.tvNurseId.setText(nurseInfo.getObjectId()); // 护工编号
-        holder.tvNurseName.setText(nurseInfo.getUsername());
-        ; // 护工姓名
-        holder.tvNursePhoneNumber.setText(nurseInfo.getMobile());
-        ; // 护工手机号码
-        holder.tvNurseTypeOfCare.setText(nurseInfo.getNursingtype());
-        ; // 护工护理类型
-        holder.tvNurseCreationTime.setText(nurseInfo.getCreatedAt());
-        ; // 创建时间
+        holder.tvNurseName.setText(nurseInfo.getUsername()); // 护工姓名
+        holder.tvNursePhoneNumber.setText(nurseInfo.getMobile()); // 护工手机号码
+        holder.tvNurseTypeOfCare.setText(nurseInfo.getNursingtype()); // 护工护理类型
+        holder.tvNurseCreationTime.setText(nurseInfo.getCreatedAt()); // 创建时间
     }
 
     @Override
