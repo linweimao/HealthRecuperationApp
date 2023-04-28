@@ -22,6 +22,7 @@ import com.lwm.healthrecuperationapp.api.RequestCallback;
 import com.lwm.healthrecuperationapp.entity.MyCollectResponse;
 import com.lwm.healthrecuperationapp.entity.VideoEntity;
 import com.lwm.healthrecuperationapp.listener.OnItemChildClickListener;
+import com.lwm.healthrecuperationapp.util.ProxyVideoCacheManager;
 import com.lwm.healthrecuperationapp.util.Tag;
 import com.lwm.healthrecuperationapp.util.Utils;
 
@@ -203,11 +204,11 @@ public class MyCollectActivity extends BaseActivity implements OnItemChildClickL
             releaseVideoView();
         }
         VideoEntity videoEntity = datas.get(position);
-        //边播边存
-//        String proxyUrl = ProxyVideoCacheManager.getProxy(this).getProxyUrl(videoBean.getUrl());
-//        mVideoView.setUrl(proxyUrl);
+        // 边播边存
+        String proxyUrl = ProxyVideoCacheManager.getProxy(this).getProxyUrl(videoEntity.getPlayurl());
+        mVideoView.setUrl(proxyUrl);
 
-        mVideoView.setUrl(videoEntity.getPlayurl());
+//        mVideoView.setUrl(videoEntity.getPlayurl());
         mTitleView.setTitle(videoEntity.getVtitle());
         View itemView = mLinearLayoutManager.findViewByPosition(position);
         if (itemView == null) return;
