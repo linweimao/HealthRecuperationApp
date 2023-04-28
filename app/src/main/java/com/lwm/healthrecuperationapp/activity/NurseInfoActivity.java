@@ -18,7 +18,7 @@ import cn.bmob.v3.listener.QueryListener;
 public class NurseInfoActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView mImgNurseInfoReturn;
-    private TextView mTvName, mTvSex, mTvAge, mTvPhoneNumber, mTvAddress, mTvTypeOfCare, mTvNursingYears;
+    private TextView mTvNurseId, mTvName, mTvSex, mTvAge, mTvPhoneNumber, mTvAddress, mTvTypeOfCare, mTvNursingYears;
 
     @Override
     protected int initLayout() {
@@ -28,6 +28,7 @@ public class NurseInfoActivity extends BaseActivity implements View.OnClickListe
     @Override
     protected void initView() {
         mImgNurseInfoReturn = (ImageView) findViewById(R.id.img_nurse_info_return);
+        mTvNurseId = (TextView) findViewById(R.id.tv_nurse_id);
         mTvName = (TextView) findViewById(R.id.tv_name);
         mTvSex = (TextView) findViewById(R.id.tv_sex);
         mTvAge = (TextView) findViewById(R.id.tv_age);
@@ -79,8 +80,13 @@ public class NurseInfoActivity extends BaseActivity implements View.OnClickListe
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            mTvNurseId.setText(nurseInfo.getObjectId());
                             mTvName.setText(nurseInfo.getUsername());
-                            mTvSex.setText(nurseInfo.getSex());
+                            if ("male".equals(nurseInfo.getSex())) {
+                                mTvSex.setText("男");
+                            } else {
+                                mTvSex.setText("女");
+                            }
                             mTvAge.setText(String.valueOf(nurseInfo.getAge()));
                             mTvPhoneNumber.setText(nurseInfo.getMobile());
                             mTvAddress.setText(nurseInfo.getAddress());
@@ -89,6 +95,7 @@ public class NurseInfoActivity extends BaseActivity implements View.OnClickListe
                         }
                     });
                 } else {
+                    mTvNurseId.setText("");
                     mTvName.setText("");
                     mTvSex.setText("");
                     mTvAge.setText("");

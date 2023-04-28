@@ -114,6 +114,7 @@
     <string name="nurse_type_of_care">护理类型：</string>
     <string name="nurse_update_time">更新时间：</string>
     <!-- 护工信息 -->
+    <string name="nurseinfo_id">护工编号</string>
     <string name="nurseinfo">护工信息</string>
     <string name="nurseinfo_name">姓名</string>
     <string name="nurseinfo_sex">性别</string>
