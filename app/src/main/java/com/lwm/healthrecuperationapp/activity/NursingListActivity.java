@@ -1,5 +1,7 @@
 package com.lwm.healthrecuperationapp.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,6 +40,26 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void initView() {
+        // 判断是否绑定了护工编号
+        if (!"".equals(getStringFromSp("drugid"))) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(NursingListActivity.this);
+            builder.setTitle(getResources().getString(R.string.unbinding_prompt))
+                    .setMessage(getResources().getString(R.string.nurseinfo_unbinding))
+                    .setCancelable(false)
+                    .setPositiveButton(getResources().getString(R.string.nurseinfo_unbinding_determine), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            removeByKey("drugid");
+                            dialog.dismiss();
+                        }
+                    }).setNegativeButton(getResources().getString(R.string.nurseinfo_unbinding_cancel), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            finish();
+                        }
+                    }).create().show();
+        }
         mImgNursingListReturn = (ImageView) findViewById(R.id.img_nursing_list_return);
         mRefreshLayout = (SmartRefreshLayout) findViewById(R.id.refreshLayout);
         mRvNursingList = (RecyclerView) findViewById(R.id.rv_nursing_list);

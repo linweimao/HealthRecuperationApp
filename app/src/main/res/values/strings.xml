@@ -124,6 +124,10 @@
     <string name="nurseinfo_type_of_care">护理类型</string>
     <string name="nurseinfo_nursing_years">护理年数</string>
     <string name="query_failed">查询失败</string>
+    <string name="unbinding_prompt">解绑提示</string>
+    <string name="nurseinfo_unbinding">您已经绑定了一位护工的编号，请问您需要进行解绑？\n\n注意：点击确定将进行解绑。</string>
+    <string name="nurseinfo_unbinding_determine">确定</string>
+    <string name="nurseinfo_unbinding_cancel">取消</string>
     <!-- 服药提醒 -->
     <string name="scan_drugs">扫描药品</string>
     <string name="drug_list">药品列表</string>
