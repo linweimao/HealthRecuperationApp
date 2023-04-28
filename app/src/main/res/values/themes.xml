@@ -32,4 +32,12 @@
         <item name="android:background">@color/color_f6f6f6</item>
     </style>
 
+    <!-- 视频通话主题 -->
+    <style name="FullScreenVideoTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
 </resources>

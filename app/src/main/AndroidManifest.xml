@@ -69,7 +69,8 @@
             android:exported="false" />
         <activity
             android:name=".activity.VideoChatActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/FullScreenVideoTheme" />
         <activity
             android:name=".activity.EmergencyCallActivity"
             android:exported="false" />
