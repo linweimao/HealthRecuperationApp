@@ -10,6 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.adapter.NursingListAdapter;
 import com.lwm.healthrecuperationapp.entity.NurseInfo;
+import com.scwang.smart.refresh.header.ClassicsHeader;
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener;
 
 import java.util.List;
 
@@ -21,6 +25,7 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
 
     private static final String TAG = NursingListActivity.class.getSimpleName();
     private ImageView mImgNursingListReturn;
+    private RefreshLayout mRefreshLayout;
     private RecyclerView mRvNursingList;
     private LinearLayoutManager mLinearLayoutManager;
     private NursingListAdapter mNursingListAdapter;
@@ -34,6 +39,7 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void initView() {
         mImgNursingListReturn = (ImageView) findViewById(R.id.img_nursing_list_return);
+        mRefreshLayout = (SmartRefreshLayout) findViewById(R.id.refreshLayout);
         mRvNursingList = (RecyclerView) findViewById(R.id.rv_nursing_list);
         mImgNursingListReturn.setOnClickListener(this);
         mLinearLayoutManager = new LinearLayoutManager(NursingListActivity.this);
@@ -41,6 +47,7 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
         mRvNursingList.setLayoutManager(mLinearLayoutManager);
         mNursingListAdapter = new NursingListAdapter(NursingListActivity.this);
         mRvNursingList.setAdapter(mNursingListAdapter);
+        mRefreshLayout.setRefreshHeader(new ClassicsHeader(this));
         mNursingListAdapter.setOnItemClick(new NursingListAdapter.OnItemClick() {
             @Override
             public void onclick(View view) {
@@ -50,10 +57,22 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
                 startActivity(nurseInfoIntent);
             }
         });
+        // 刷新
+        mRefreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                getNurseInfoList();
+            }
+        });
     }
 
     @Override
     protected void initData() {
+        getNurseInfoList();
+    }
+
+    // 获取护工列表信息
+    private void getNurseInfoList() {
         BmobQuery<NurseInfo> query = new BmobQuery<NurseInfo>();
 //        // 按照更新时间升序显示数据
 //        query.order("updatedAt");
@@ -63,6 +82,7 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
         query.findObjects(new FindListener<NurseInfo>() {
             @Override
             public void done(List<NurseInfo> list, BmobException e) {
+                mRefreshLayout.finishRefresh(true); // 将刷新动画关闭
                 mNurseInfos = list;
                 mNursingListAdapter.setDatas(mNurseInfos);
                 mNursingListAdapter.notifyDataSetChanged(); // 通知 RecyclerView 刷新页面(刷新数据)

@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:text="9e2ee92c1f"
             android:textColor="@color/color_606672"
+            android:textIsSelectable="true"
             android:textSize="@dimen/size_16sp" />
     </LinearLayout>
 
