@@ -73,7 +73,7 @@
     <string name="home_hi_name">Hi %s，</string>
     <string name="home_welcome_back">欢迎回来！</string>
     <string name="home_nursing_list">护工列表</string>
-    <string name="home_medication_reminder">服药提醒</string>
+    <string name="home_medication_reminder">服药提示</string>
     <string name="home_video_call">视频通话</string>
     <string name="home_emergency_call">紧急呼叫</string>
     <string name="fill_in_contacts">请填写紧急联系人</string>
@@ -127,8 +127,11 @@
     <string name="query_failed">查询失败</string>
     <string name="unbinding_prompt">解绑提示</string>
     <string name="nurseinfo_unbinding">您已经绑定了一位护工的编号，请问您需要进行解绑？\n\n注意：点击确定将进行解绑。</string>
-    <string name="nurseinfo_unbinding_determine">确定</string>
-    <string name="nurseinfo_unbinding_cancel">取消</string>
+    <string name="binding_prompt">绑定提示</string>
+    <string name="binding_prompt_content">使用该功能需要先绑定护工！</string>
+    <string name="fill_in_nurse_id">请填写护工编号</string>
+    <string name="nurseinfo_determine">确定</string>
+    <string name="nurseinfo_cancel">取消</string>
     <!-- 服药提醒 -->
     <string name="scan_drugs">扫描药品</string>
     <string name="drug_list">药品列表</string>
@@ -139,6 +142,7 @@
     <string name="brand_name">品牌名称</string>
     <string name="drug_specifications">药品规格</string>
     <string name="drugs_usage_and_dosage">用法用量</string>
+    <string name="administration_time">服药时间</string>
     <string name="drugs_entry_time">录入时间</string>
     <string name="verify_drug_information">请核对药品信息。</string>
     <string name="add_medication">添加药品</string>

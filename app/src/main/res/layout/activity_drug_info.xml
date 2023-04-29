@@ -203,6 +203,34 @@
                 android:textSize="@dimen/size_14sp" />
         </LinearLayout>
 
+        <View style="@style/style_line"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dimen_16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                android:text="@string/administration_time"
+                android:textColor="@color/color_4d4d4d"
+                android:textSize="@dimen/size_15sp" />
+
+            <TextView
+                android:id="@+id/tv_administration_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:singleLine="true"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/size_14sp" />
+        </LinearLayout>
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -242,7 +270,8 @@
                 android:paddingVertical="@dimen/size_12sp"
                 android:text="@string/add_medication"
                 android:textColor="@color/color_ffffff"
-                android:textSize="@dimen/size_16sp" />
+                android:textSize="@dimen/size_16sp"
+                android:visibility="gone" />
 
         </RelativeLayout>
     </LinearLayout>

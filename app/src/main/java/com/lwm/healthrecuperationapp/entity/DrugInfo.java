@@ -5,12 +5,22 @@ import cn.bmob.v3.BmobObject;
 // 药品信息
 public class DrugInfo extends BmobObject {
 
+    private String nurseid; // 护工编号
     private String drugbarcode; // 药品条码
     private String drugname; // 药品名称
     private String enterprisename; // 企业名称
     private String brandname; // 品牌名称
     private String drugspecifications; // 药品规格
+    private String administrationtime; // 服药时间
     private String drugsusageanddosage; // 药品用法用量
+
+    public String getNurseid() {
+        return nurseid;
+    }
+
+    public void setNurseid(String nurseid) {
+        this.nurseid = nurseid;
+    }
 
     public String getDrugbarcode() {
         return drugbarcode;
@@ -52,6 +62,14 @@ public class DrugInfo extends BmobObject {
         this.drugspecifications = drugspecifications;
     }
 
+    public String getAdministrationtime() {
+        return administrationtime;
+    }
+
+    public void setAdministrationtime(String administrationtime) {
+        this.administrationtime = administrationtime;
+    }
+
     public String getDrugsusageanddosage() {
         return drugsusageanddosage;
     }
@@ -63,11 +81,13 @@ public class DrugInfo extends BmobObject {
     @Override
     public String toString() {
         return "DrugInfo{" +
-                "drugbarcode='" + drugbarcode + '\'' +
+                "nurseid='" + nurseid + '\'' +
+                ", drugbarcode='" + drugbarcode + '\'' +
                 ", drugname='" + drugname + '\'' +
                 ", enterprisename='" + enterprisename + '\'' +
                 ", brandname='" + brandname + '\'' +
                 ", drugspecifications='" + drugspecifications + '\'' +
+                ", administrationtime='" + administrationtime + '\'' +
                 ", drugsusageanddosage='" + drugsusageanddosage + '\'' +
                 '}';
     }

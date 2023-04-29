@@ -18,7 +18,7 @@ public class DrugInfoActivity extends BaseActivity implements View.OnClickListen
     private static final String TAG = DrugInfoActivity.class.getSimpleName();
 
     private ImageView mImgDrugInfoReturn;
-    private TextView mTvDrugBarcode, mTvDrugName, mTvEnterpriseName, mTvBrandName, mTvDrugSpecifications, mTvDrugsUsageAndDosage, mTvAddMedication;
+    private TextView mTvDrugBarcode, mTvDrugName, mTvEnterpriseName, mTvBrandName, mTvDrugSpecifications, mTvDrugsUsageAndDosage, mTvAdministrationTime, mTvAddMedication;
 
     @Override
     protected int initLayout() {
@@ -34,6 +34,7 @@ public class DrugInfoActivity extends BaseActivity implements View.OnClickListen
         mTvBrandName = (TextView) findViewById(R.id.tv_brand_name); // 品牌名称
         mTvDrugSpecifications = (TextView) findViewById(R.id.tv_drug_specifications); // 药品规格
         mTvDrugsUsageAndDosage = (TextView) findViewById(R.id.tv_drugs_usage_and_dosage); // 用法用量
+        mTvAdministrationTime = (TextView) findViewById(R.id.tv_administration_time); // 服药时间
         mTvAddMedication = (TextView) findViewById(R.id.tv_add_medication); // 添加药品按钮
         mImgDrugInfoReturn.setOnClickListener(this);
         mTvAddMedication.setOnClickListener(this);
@@ -72,6 +73,7 @@ public class DrugInfoActivity extends BaseActivity implements View.OnClickListen
                             mTvBrandName.setText(drugInfo.getBrandname()); // 品牌名称
                             mTvDrugSpecifications.setText(drugInfo.getDrugspecifications()); // 药品规格
                             mTvDrugsUsageAndDosage.setText(drugInfo.getDrugsusageanddosage()); // 药品用法用量
+                            mTvAdministrationTime.setText(drugInfo.getAdministrationtime()); // 服药时间
                         }
                     });
                 } else {
@@ -81,8 +83,9 @@ public class DrugInfoActivity extends BaseActivity implements View.OnClickListen
                     mTvBrandName.setText("");
                     mTvDrugSpecifications.setText("");
                     mTvDrugsUsageAndDosage.setText("");
+                    mTvAdministrationTime.setText("");
                     Log.d(TAG, getResources().getString(R.string.query_failed) + ": " + e.getMessage());
-                    showToast(TAG + " " + getResources().getString(R.string.query_failed) + ": " + e.getMessage());
+                    showToast(getResources().getString(R.string.query_failed) + ": " + e.getMessage());
                 }
             }
         });

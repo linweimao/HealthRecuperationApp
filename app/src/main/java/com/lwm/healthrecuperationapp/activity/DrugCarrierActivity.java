@@ -1,15 +1,20 @@
 package com.lwm.healthrecuperationapp.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.entity.DrugInfo;
+import com.lwm.healthrecuperationapp.util.StringUtils;
 
 import java.util.List;
 
@@ -25,6 +30,9 @@ public class DrugCarrierActivity extends BaseActivity implements View.OnClickLis
     private ImageView mImgDrugInfoReturn;
     private LinearLayout mLineScanDrugs;
     private LinearLayout mLineDrugList;
+    private ImageView mSafetyDetailClose;
+    private EditText mEtFillInNurseId;
+    private TextView mBtnNurseId;
 
     @Override
     protected int initLayout() {
@@ -33,12 +41,62 @@ public class DrugCarrierActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     protected void initView() {
+        // 绑定护工
+        if ("".equals(getStringFromSp("nurseid"))) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DrugCarrierActivity.this);
+            builder.setTitle(getResources().getString(R.string.binding_prompt))
+                    .setMessage(getResources().getString(R.string.binding_prompt_content))
+                    .setCancelable(false)
+                    .setPositiveButton(getResources().getString(R.string.nurseinfo_determine), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            showNurseIdDialog();
+                        }
+                    }).setNegativeButton(getResources().getString(R.string.nurseinfo_cancel), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                            finish();
+                        }
+                    }).create().show();
+        }
         mImgDrugInfoReturn = (ImageView) findViewById(R.id.img_drug_info_return);
         mLineScanDrugs = (LinearLayout) findViewById(R.id.line_scan_drugs);
         mLineDrugList = (LinearLayout) findViewById(R.id.line_drug_list);
         mImgDrugInfoReturn.setOnClickListener(this);
         mLineScanDrugs.setOnClickListener(this);
         mLineDrugList.setOnClickListener(this);
+    }
+
+    private void showNurseIdDialog() {
+        AlertDialog.Builder mDialog = new AlertDialog.Builder(DrugCarrierActivity.this);
+        View dialogView = View.inflate(DrugCarrierActivity.this, R.layout.dialog_nurse_id, null);
+        AlertDialog emNurseIdDialog = mDialog.setView(dialogView).setCancelable(false).create();
+        emNurseIdDialog.show();
+        mSafetyDetailClose = (ImageView) dialogView.findViewById(R.id.safety_detail_close);
+        mEtFillInNurseId = (EditText) dialogView.findViewById(R.id.et_fill_in_nurse_id);
+        mBtnNurseId = (TextView) dialogView.findViewById(R.id.btn_nurse_id);
+        // 关闭图标
+        mSafetyDetailClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                emNurseIdDialog.dismiss();
+                finish();
+            }
+        });
+        // 确定按钮
+        mBtnNurseId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nurseIdStr = mEtFillInNurseId.getText().toString().trim(); // 护工编号
+                if (StringUtils.isEmpty(nurseIdStr)) {
+                    showToast(getResources().getString(R.string.fill_in_nurse_id));
+                    return;
+                }
+                saveStringToSp("nurseid", nurseIdStr); // 护工编号
+                emNurseIdDialog.dismiss();
+            }
+        });
     }
 
     @Override

@@ -41,18 +41,18 @@ public class NursingListActivity extends BaseActivity implements View.OnClickLis
     @Override
     protected void initView() {
         // 判断是否绑定了护工编号
-        if (!"".equals(getStringFromSp("drugid"))) {
+        if (!"".equals(getStringFromSp("nurseid"))) {
             AlertDialog.Builder builder = new AlertDialog.Builder(NursingListActivity.this);
             builder.setTitle(getResources().getString(R.string.unbinding_prompt))
                     .setMessage(getResources().getString(R.string.nurseinfo_unbinding))
                     .setCancelable(false)
-                    .setPositiveButton(getResources().getString(R.string.nurseinfo_unbinding_determine), new DialogInterface.OnClickListener() {
+                    .setPositiveButton(getResources().getString(R.string.nurseinfo_determine), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            removeByKey("drugid");
+                            removeByKey("nurseid");
                             dialog.dismiss();
                         }
-                    }).setNegativeButton(getResources().getString(R.string.nurseinfo_unbinding_cancel), new DialogInterface.OnClickListener() {
+                    }).setNegativeButton(getResources().getString(R.string.nurseinfo_cancel), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
