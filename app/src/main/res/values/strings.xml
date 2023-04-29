@@ -132,6 +132,7 @@
     <string name="fill_in_nurse_id">请填写护工编号</string>
     <string name="nurseinfo_determine">确定</string>
     <string name="nurseinfo_cancel">取消</string>
+    <string name="none_nurseinfo">暂无此护工，请输入正确的护工编号。</string>
     <!-- 服药提醒 -->
     <string name="scan_drugs">扫描药品</string>
     <string name="drug_list">药品列表</string>

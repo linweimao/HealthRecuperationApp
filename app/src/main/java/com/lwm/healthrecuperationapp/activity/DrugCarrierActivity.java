@@ -14,6 +14,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.entity.DrugInfo;
+import com.lwm.healthrecuperationapp.entity.NurseInfo;
 import com.lwm.healthrecuperationapp.util.StringUtils;
 
 import java.util.List;
@@ -33,6 +34,7 @@ public class DrugCarrierActivity extends BaseActivity implements View.OnClickLis
     private ImageView mSafetyDetailClose;
     private EditText mEtFillInNurseId;
     private TextView mBtnNurseId;
+    private boolean[] mQueryResult;
 
     @Override
     protected int initLayout() {
@@ -93,8 +95,20 @@ public class DrugCarrierActivity extends BaseActivity implements View.OnClickLis
                     showToast(getResources().getString(R.string.fill_in_nurse_id));
                     return;
                 }
-                saveStringToSp("nurseid", nurseIdStr); // 护工编号
-                emNurseIdDialog.dismiss();
+                // 使用接口回调解决异步问题
+                queryNurseId(nurseIdStr, new QueryCallback() {
+                    @Override
+                    public void onSuccess(int queryResult) {
+                        if (queryResult == 0) {
+                            showToast(getResources().getString(R.string.none_nurseinfo));
+                            mEtFillInNurseId.setText("");
+                            return;
+                        } else {
+                            saveStringToSp("nurseid", nurseIdStr); // 护工编号
+                            emNurseIdDialog.dismiss();
+                        }
+                    }
+                });
             }
         });
     }
@@ -157,5 +171,27 @@ public class DrugCarrierActivity extends BaseActivity implements View.OnClickLis
                 }
             }
         });
+    }
+
+    // 检测护工编号（使用接口回调解决异步问题）
+    private void queryNurseId(String nurseIdStr, QueryCallback callback) {
+        mQueryResult = new boolean[1];
+        BmobQuery<NurseInfo> drugBarcodeQuery = new BmobQuery<NurseInfo>();
+        drugBarcodeQuery.addWhereEqualTo("objectId", nurseIdStr);
+        drugBarcodeQuery.findObjects(new FindListener<NurseInfo>() {
+            @Override
+            public void done(List<NurseInfo> list, BmobException e) {
+                if (list.size() == 0 || list.get(0).getObjectId().isEmpty() || "".equals(list.get(0).getObjectId())) {
+                    callback.onSuccess(0); // 无此护工编号
+                } else {
+                    callback.onSuccess(1);
+                }
+            }
+        });
+    }
+
+    // 使用接口回调解决异步问题
+    private interface QueryCallback {
+        void onSuccess(int queryResult);
     }
 }
