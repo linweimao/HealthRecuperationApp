@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_f5f6f8"
+    tools:context=".activity.SetActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/color_0065ff"
+        android:paddingHorizontal="@dimen/dimen_14dp"
+        android:layout_height="@dimen/dimen_45dp">
+
+        <ImageView
+            android:id="@+id/btn_img_return"
+            android:layout_width="@dimen/dimen_16dp"
+            android:layout_height="@dimen/dimen_16dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_title_left_arrow_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:text="@string/my_setting"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_about_us"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_45dp"
+        android:background="@color/color_ffffff"
+        android:paddingHorizontal="@dimen/dimen_14dp"
+        android:layout_marginTop="@dimen/dimen_5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/about_us"
+            android:textColor="@color/color_112950"
+            android:textSize="@dimen/size_16sp" />
+
+        <ImageView
+            android:layout_width="@dimen/dimen_20dp"
+            android:layout_height="@dimen/dimen_20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_right_arrow" />
+    </RelativeLayout>
+
+
+</LinearLayout>

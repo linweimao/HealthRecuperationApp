@@ -214,13 +214,13 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
 
     /**
      * 点赞、收藏接口
-     *    请求地址: /app/videolist/updateCount
-     *    请求方法: post
-     *    请求头: Content-Type: application/json;charset=UTF-8
-     *    请求体实例：
-     *       "vid": 视频id
-     *       "type": (0 评论, 1 收藏, 2 点赞)
-     *       "flag": (true 已收藏, false 未收藏 / true 已点赞, false 未点赞)
+     * 请求地址: /app/videolist/updateCount
+     * 请求方法: post
+     * 请求头: Content-Type: application/json;charset=UTF-8
+     * 请求体实例：
+     * "vid": 视频id
+     * "type": (0 评论, 1 收藏, 2 点赞)
+     * "flag": (true 已收藏, false 未收藏 / true 已点赞, false 未点赞)
      */
     private void updateCount(int vid, int type, boolean flag) {
         HashMap<String, Object> params = new HashMap<String, Object>();
@@ -240,7 +240,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
 
             @Override
             public void onFailure(Exception e) {
-                Log.d("onFailure", e.getMessage());
+                Log.d("VideoAdapter onFailure", e.getMessage());
             }
         });
     }

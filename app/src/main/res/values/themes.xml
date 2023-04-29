@@ -12,5 +12,32 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/color_0065ff</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
+
+    <style name="DarkActionBarAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/color_0065ff</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_0065ff</item>
+    </style>
+
+    <style name="WeatherTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_0065ff</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_0065ff</item>
+    </style>
+
+    <!-- 统一分割线 -->
+    <style name="style_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_0_5</item>
+        <item name="android:background">@color/color_f6f6f6</item>
+    </style>
+
+    <!-- 视频通话主题 -->
+    <style name="FullScreenVideoTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
 </resources>

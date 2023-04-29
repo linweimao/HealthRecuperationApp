@@ -63,6 +63,34 @@ public class DialogUtil {
         });
     }
 
+    public void createDialog(Context context, View view, DialogOnClick dialogOnClick) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+        this.mDialogOnClick = dialogOnClick;
+        showSetEmPhoneNumDialog(dialog, view);
+    }
+
+    private void showSetEmPhoneNumDialog(AlertDialog.Builder dialog, View view) {
+        AlertDialog callPhoneDialog = dialog.setView(view).setCancelable(true).create();
+        callPhoneDialog.show();
+        mTvDialogMessage = view.findViewById(R.id.tv_contact_us_dialog_message);
+        mTvDialogNegative = view.findViewById(R.id.tv_dialog_negative);
+        mTvDialogPositive = view.findViewById(R.id.tv_dialog_positive);
+        mTvDialogMessage.setText(String.format(view.getResources().getString(R.string.my_contact_us_dialog_message), mPhoneNumber));
+        mTvDialogNegative.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callPhoneDialog.dismiss();
+            }
+        });
+        mTvDialogPositive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callPhoneDialog.dismiss();
+                mDialogOnClick.PositiveOnClick();
+            }
+        });
+    }
+
     public interface DialogOnClick {
         void PositiveOnClick();
 

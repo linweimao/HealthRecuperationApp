@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_10dp"
+    android:layout_marginTop="@dimen/dimen_8dp"
+    android:background="@drawable/shape_cor_10_sol_ffffff"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dimen_10dp"
+    android:paddingVertical="@dimen/dimen_5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/dimen_5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drug_barcode"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_drug_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drug_name"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_drug_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enterprise_name"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_enterprise_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/brand_name"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_brand_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drug_specifications"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_drug_specifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drugs_usage_and_dosage"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_drugs_usage_and_dosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drugs_entry_time"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_drugs_entry_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/administration_time"
+            android:textColor="@color/color_b0000000"
+            android:textSize="@dimen/size_18sp" />
+
+        <TextView
+            android:id="@+id/tv_administration_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="xxxxxx"
+            android:textColor="@color/color_c19f9898"
+            android:textSize="@dimen/size_18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginRight="@dimen/dimen_5dp"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_set_reminders"
+            android:layout_width="110dp"
+            android:layout_height="@dimen/dimen_35dp"
+            android:layout_marginLeft="@dimen/dimen_15dp"
+            android:background="@drawable/shape_cor_6_sol_0065ff"
+            android:gravity="center"
+            android:text="@string/drug_list_item_set_reminders"
+            android:textColor="@color/color_ffffff"
+            android:textSize="@dimen/size_18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

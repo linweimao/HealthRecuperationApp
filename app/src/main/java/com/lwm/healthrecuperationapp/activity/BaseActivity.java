@@ -38,6 +38,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
     }
 
+    public void showToastLengthLong(String msg) {
+        Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show();
+    }
+
     // 主线程中提示 Toast
     public void showToastSync(String msg) {
         Looper.prepare();
@@ -79,6 +83,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Boolean getBooleanFromSp(String key) {
         SharedPreferences sp = getSharedPreferences("sp_lwm", MODE_PRIVATE);
         return sp.getBoolean(key, true);
+    }
+
+    protected void removeByKey(String key) {
+        SharedPreferences sp = getSharedPreferences("sp_lwm", MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.remove(key);
+        edit.commit();
     }
 
     /**

@@ -48,14 +48,15 @@
     <string name="my_emergency_contact">紧急联系人</string>
     <string name="my_contact_us">联系我们</string>
     <string name="my_contact_us_email">邮箱</string>
-    <string name="my_contact_us_email_content">1203669885@qq.com</string>
+    <string name="my_contact_us_email_content">1203669222@qq.com</string>
     <string name="my_contact_us_phone">手机号码</string>
-    <string name="my_contact_us_phone_number">18318435002</string>
+    <string name="my_contact_us_phone_number">18318411122</string>
     <string name="my_contact_us_phone_number_reminder">温馨提示：点击号码进行拨打！</string>
     <string name="my_contact_us_dialog_title">温馨提示</string>
     <string name="my_contact_us_dialog_message">您将拨打 %s 此号码。</string>
     <string name="my_contact_us_dialog_positivebtn">确定</string>
     <string name="my_contact_us_dialog_negativebtn">取消</string>
+    <string name="my_contact_us_unauthorized_temporarily">您暂未授权此权限！</string>
     <string name="my_setting">设置</string>
     <string name="my_add_emergency_contact">添加紧急联系人</string>
     <string name="my_safeguarding_health">保障自己和家人的身体健康</string>
@@ -72,8 +73,18 @@
     <string name="home_hi_name">Hi %s，</string>
     <string name="home_welcome_back">欢迎回来！</string>
     <string name="home_nursing_list">护工列表</string>
-    <string name="home_medication_reminder">服药提醒</string>
+    <string name="home_medication_reminder">服药提示</string>
     <string name="home_video_call">视频通话</string>
+    <string name="home_emergency_call">紧急呼叫</string>
+    <string name="fill_in_contacts">请填写紧急联系人</string>
+    <string name="emergency_contact_one">紧急联系人1：</string>
+    <string name="emergency_contact_two">紧急联系人2：</string>
+    <string name="emergency_contact_hint">请输入紧急联系人的手机号码</string>
+    <string name="emergency_contact1">请输入紧急联系人1的手机号码</string>
+    <string name="emergency_contact2">请输入紧急联系人2的手机号码</string>
+    <string name="emergency_contact">紧急联系人</string>
+    <string name="emergency_contact_define">确定</string>
+    <string name="reset_emergency_contacts">重置紧急联系人</string>
     <string name="home_weather_info">天气信息</string>
     <string name="home_flashlight">手电筒</string>
     <string name="home_health_article">健康文章</string>
@@ -83,4 +94,74 @@
     <string name="health_author">作者：%s</string>
     <string name="health_time">时间：%s</string>
     <string name="health_article_list_empty_data">暂无数据！</string>
+    <!--天气信息-->
+    <string name="weather_china">中国</string>
+    <string name="weather_life_advice">生活建议</string>
+    <string name="weather_forecast">预报</string>
+    <string name="weather_air_quality">空气质量</string>
+    <string name="weather_aqi_index">AQI指数</string>
+    <string name="weather_pm25_index">PM2.5 指数</string>
+    <string name="weather_comfort">舒适度：</string>
+    <string name="weather_car_wash_index">洗车指数：</string>
+    <string name="weather_sports_advice">运动建议：</string>
+    <string name="weather_failed_to_obtain_weather_information">获取天气信息失败</string>
+    <string name="weather_loading_failed">加载失败</string>
+    <string name="weather_loading">正在加载...</string>
+    <!-- 护工列表 -->
+    <string name="nurse_id">护工编号：</string>
+    <string name="nurse_name">护工姓名：</string>
+    <string name="nurse_phone_number">手机号码：</string>
+    <string name="nurse_type_of_care">护理类型：</string>
+    <string name="nurse_update_time">更新时间：</string>
+    <!-- 护工信息 -->
+    <string name="nurseinfo_id">护工编号</string>
+    <string name="nurseinfo">护工信息</string>
+    <string name="nurseinfo_name">姓名</string>
+    <string name="nurseinfo_sex">性别</string>
+    <string name="nurseinfo_age">年龄</string>
+    <string name="nurseinfo_phone_number">手机号码</string>
+    <string name="nurseinfo_idcard">身份证号</string>
+    <string name="nurseinfo_address">详细地址</string>
+    <string name="nurseinfo_type_of_care">护理类型</string>
+    <string name="nurseinfo_nursing_years">护理年数</string>
+    <string name="query_failed">查询失败</string>
+    <string name="unbinding_prompt">解绑提示</string>
+    <string name="nurseinfo_unbinding">您已经绑定了一位护工的编号，请问您需要进行解绑？\n\n注意：点击确定将进行解绑。</string>
+    <string name="binding_prompt">绑定提示</string>
+    <string name="binding_prompt_content">使用该功能需要先绑定护工！</string>
+    <string name="fill_in_nurse_id">请填写护工编号</string>
+    <string name="nurseinfo_determine">确定</string>
+    <string name="nurseinfo_cancel">取消</string>
+    <string name="none_nurseinfo">暂无此护工，请输入正确的护工编号。</string>
+    <!-- 服药提醒 -->
+    <string name="scan_drugs">扫描药品</string>
+    <string name="drug_list">药品列表</string>
+    <string name="drug_info">药品信息</string>
+    <string name="drug_barcode">药品条码</string>
+    <string name="drug_name">药品名称</string>
+    <string name="enterprise_name">企业名称</string>
+    <string name="brand_name">品牌名称</string>
+    <string name="drug_specifications">药品规格</string>
+    <string name="drugs_usage_and_dosage">用法用量</string>
+    <string name="administration_time">服药时间</string>
+    <string name="drugs_entry_time">录入时间</string>
+    <string name="verify_drug_information">请核对药品信息。</string>
+    <string name="add_medication">添加药品</string>
+    <string name="please_align_the_qr_code">请对准二维码</string>
+    <string name="scan_code_failed">扫码识别失败，请重试</string>
+    <string name="drug_inf_not_entered">该药品信息暂未录入。</string>
+    <string name="drug_list_item_set_reminders">设置提醒</string>
+
+    <!--关于我们-->
+    <string name="about_us">关于康养</string>
+    <string name="about_us_content">在互联网的高速发展下，医疗养老与计算机技术联系越来越紧密，养老行业需要与其进行有效融合，因此智慧养老的概念日益受到关注，智慧养老是指运用现代科技手段借助互联网高效传输与大数据的特点，为老年人提供便利的生活和健康护理服务，从而提高他们的生活质量和健康水平。</string>
+
+    <!-- PLEASE KEEP THIS App ID IN SAFE PLACE -->
+    <!-- Get your own App ID at https://dashboard.agora.io/ -->
+    <!-- After you entered the App ID, remove <##> outside of Your App ID -->
+    <string name="agora_app_id">deb2822e06b34da388deeb9682355997</string>
+    <!-- Obtain a temp Access Token at https://dashboard.agora.io -->
+    <!-- You will need to deploy your own token server for production release -->
+    <!-- Leave this value empty if Security keys/Token is not enabled for your project -->
+    <string name="agora_access_token">007eJxTYAjZIO12jEFXP40pZYGEqB+7V5fHHxbRGAfToEUf3i6Z1afAkJKaZGRhZJRqYJZkbJKSaGxhkZKammRpZmFkbGpqaWnuU+6e0hDIyBB7QoCVkQECQXxeBsf0/KLEkNKS/KLMxBwGBgACxx6U</string>
 </resources>

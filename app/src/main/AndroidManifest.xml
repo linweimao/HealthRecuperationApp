@@ -2,12 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lwm.healthrecuperationapp">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取wifi网络状态的信息 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- 对于 Android 12.0 及以上设备，还需要添加如下权限： -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 保持CPU运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.lwm.healthrecuperationapp.MyApplication"
@@ -45,6 +53,7 @@
         <!-- android:screenOrientation="portrait"设置为竖屏 -->
         <activity
             android:name=".activity.WebActivity"
+            android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.MyCollectActivity"
@@ -58,6 +67,64 @@
         <activity
             android:name=".activity.HealthArticleListActivity"
             android:exported="false" />
+        <activity
+            android:name=".activity.VideoChatActivity"
+            android:exported="false"
+            android:theme="@style/FullScreenVideoTheme" />
+        <activity
+            android:name=".activity.EmergencyCallActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FlashActivity"
+            android:exported="false"
+            android:theme="@style/DarkActionBarAppTheme" />
+        <activity
+            android:name=".activity.SelectCityActivity"
+            android:exported="false"
+            android:theme="@style/WeatherTheme" />
+        <activity
+            android:name=".activity.WeatherActivity"
+            android:exported="false"
+            android:theme="@style/WeatherTheme" />
+        <activity
+            android:name=".activity.SetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.NursingListActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
+        <activity
+            android:name=".activity.NurseInfoActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DrugCarrierActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DrugInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.DrugListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ScanActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.lwm.healthrecuperationapp.BmobContentProvider" />
+
+        <service
+            android:name=".service.AutoUpdateService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

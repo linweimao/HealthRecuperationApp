@@ -74,6 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_62dp"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -163,9 +164,11 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/shape_bg"
                 android:orientation="vertical"
+                android:layout_marginTop="@dimen/dimen_10dp"
                 android:paddingHorizontal="@dimen/dimen_24dp">
 
                 <RelativeLayout
+                    android:id="@+id/rl_add_emergency_contact"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_85dp"
                     android:layout_marginTop="@dimen/dimen_30dp"
@@ -282,7 +285,8 @@
                 <RelativeLayout
                     android:id="@+id/rl_emergency_contact"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_55dp">
+                    android:layout_height="@dimen/dimen_55dp"
+                    android:visibility="gone">
 
                     <ImageView
                         android:id="@+id/img_emergency_contact"
@@ -310,9 +314,11 @@
                 </RelativeLayout>
 
                 <View
+                    android:id="@+id/divider_emergency_contact"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1_5dp"
-                    android:background="@color/color_f2f4f5" />
+                    android:background="@color/color_f2f4f5"
+                    android:visibility="gone" />
 
                 <RelativeLayout
                     android:id="@+id/rl_contact_us"

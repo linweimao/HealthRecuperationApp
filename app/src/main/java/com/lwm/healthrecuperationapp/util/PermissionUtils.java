@@ -10,8 +10,8 @@ public class PermissionUtils {
 
     /**
      * 判断权限集合
-     * true：有该权限
-     * false：无该权限
+     * true：无该权限
+     * false：有该权限
      */
     public static boolean checkPermissions(Context context, String... permissions) {
         for (String permission : permissions) {

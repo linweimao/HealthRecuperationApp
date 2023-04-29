@@ -1,12 +1,14 @@
 package com.lwm.healthrecuperationapp;
 
-import android.app.Application;
 import android.content.SharedPreferences;
 
+import org.litepal.LitePalApplication;
+
+import cn.bmob.v3.Bmob;
 import skin.support.SkinCompatManager;
 import skin.support.app.SkinAppCompatViewInflater;
 
-public class MyApplication extends Application {
+public class MyApplication extends LitePalApplication {
 
     @Override
     public void onCreate() {
@@ -25,5 +27,7 @@ public class MyApplication extends Application {
         } else {
             SkinCompatManager.getInstance().restoreDefaultTheme();
         }
+        // 初始化 BmobSDK
+        Bmob.initialize(this, "196fa596d85f4412335d67d1743071e7");
     }
 }
