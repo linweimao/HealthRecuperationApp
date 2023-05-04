@@ -7,6 +7,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,7 @@ public class MyCollectActivity extends BaseActivity implements OnItemChildClickL
     private MyCollectAdapter mMyCollectAdapter;
     private List<VideoEntity> datas = new ArrayList<>();
     private LinearLayoutManager mLinearLayoutManager;
+    private ImageView mImgMycollectReturn;
 
     // 视频播放
     protected VideoView mVideoView;
@@ -91,8 +93,15 @@ public class MyCollectActivity extends BaseActivity implements OnItemChildClickL
     @Override
     protected void initView() {
         initVideoView();
+        mImgMycollectReturn = findViewById(R.id.img_mycollect_return);
         mRecyclerView = findViewById(R.id.recyclerview);
         mEmptyLinear = findViewById(R.id.empty_linear);
+        mImgMycollectReturn.setOnClickListener(new View.OnClickListener() { // 返回上一层
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     // 初始化视频播放器

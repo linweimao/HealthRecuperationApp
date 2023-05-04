@@ -5,15 +5,30 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/reLayout_nurse_info"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_50dp"
-        android:layout_centerInParent="true"
+        android:layout_height="40dp"
         android:background="@color/color_0065ff"
-        android:gravity="center"
-        android:text="@string/my_collection_text"
-        android:textColor="@color/skin_text_white"
-        android:textSize="@dimen/size_18sp" />
+        android:paddingHorizontal="@dimen/dimen_24dp">
+
+        <ImageView
+            android:id="@+id/img_mycollect_return"
+            android:layout_width="@dimen/dimen_12dp"
+            android:layout_height="@dimen/dimen_18dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_white_left_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/color_0065ff"
+            android:gravity="center"
+            android:text="@string/my_collection_text"
+            android:textColor="@color/skin_text_white"
+            android:textSize="@dimen/size_18sp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/empty_linear"
