@@ -10,11 +10,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.lwm.healthrecuperationapp.MainActivity;
 import com.lwm.healthrecuperationapp.R;
 import com.lwm.healthrecuperationapp.api.Api;
 import com.lwm.healthrecuperationapp.api.ApiConfig;
 import com.lwm.healthrecuperationapp.api.RequestCallback;
+import com.lwm.healthrecuperationapp.entity.NewsListResponse;
+import com.lwm.healthrecuperationapp.entity.RegisterResponse;
 import com.lwm.healthrecuperationapp.util.StringUtils;
 
 import java.util.HashMap;
@@ -100,7 +103,13 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        showToast(res);
+                        RegisterResponse response = new Gson().fromJson(res, RegisterResponse.class);
+                        if (response.getCode() == 500) {
+                            showToast(getResources().getString(R.string.register_hint));
+                        } else {
+                            showToast(getResources().getString(R.string.register_success));
+                            navigateTo(LoginActivity.class);
+                        }
                     }
                 });
             }

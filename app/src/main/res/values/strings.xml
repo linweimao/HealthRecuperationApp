@@ -16,6 +16,8 @@
     <string name="login_no_account">还没有账号？</string>
     <string name="login_to_register"><u>去注册</u></string>
     <string name="register">注册</string>
+    <string name="register_hint">该用户已被注册</string>
+    <string name="register_success">注册成功</string>
     <string name="register_account_info_hint">输入您需要注册的账号信息</string>
     <string name="register_account_number">有账号？</string>
     <string name="register_log_in"><u>去登录</u></string>
