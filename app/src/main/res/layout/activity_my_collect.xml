@@ -39,8 +39,8 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/dimen_250dp"
+            android:layout_height="@dimen/dimen_250dp"
             android:src="@mipmap/empty_icon" />
 
         <TextView
