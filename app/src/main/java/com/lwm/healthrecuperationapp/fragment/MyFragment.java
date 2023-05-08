@@ -36,6 +36,8 @@ public class MyFragment extends BaseFragment {
     private TextView mTvEmergencyContactOne;
     private TextView mTvEmergencyContactTwo;
     private TextView mBtnResetEmergencyContacts;
+    private String mName; // 用户名
+    private TextView mTvName;
 
     @BindView(R.id.img_header)
     ImageView imgHeader;
@@ -58,6 +60,7 @@ public class MyFragment extends BaseFragment {
         mRlAddEmergencyContact = mRootView.findViewById(R.id.rl_add_emergency_contact); // 添加紧急联系人
         mRlEmergencyContact = mRootView.findViewById(R.id.rl_emergency_contact); // 紧急联系人
         mDividerEmergencyContact = mRootView.findViewById(R.id.divider_emergency_contact);
+        mTvName = mRootView.findViewById(R.id.tv_name);
         if (StringUtils.isEmpty(getStringFromSp("emphonenum1"))
                 && StringUtils.isEmpty(getStringFromSp("emphonenum2"))) {
             mRlAddEmergencyContact.setVisibility(View.VISIBLE);
@@ -69,6 +72,7 @@ public class MyFragment extends BaseFragment {
             mDividerEmergencyContact.setVisibility(View.VISIBLE);
         }
         mDialog = new AlertDialog.Builder(getActivity());
+        getName();
     }
 
     @Override
@@ -217,6 +221,16 @@ public class MyFragment extends BaseFragment {
                     showToast(getResources().getString(R.string.my_contact_us_unauthorized_temporarily));
                 }
             default:
+        }
+    }
+
+    // 通过 Sp获取用户名
+    private void getName() {
+        mName = getStringFromSp("account");
+        if (mName.isEmpty()) {
+            mTvName.setText("");
+        } else {
+            mTvName.setText(mName);
         }
     }
 }
